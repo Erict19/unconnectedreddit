@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+Yellow
+<p>
+	{% for link in object_list %}
+			
+			[{{ link.votes }}{{ " votes" }}]
+			{{ link.description }}
+			how many comments?
+		
+		
+	{% endfor %}
+</p>
+
+{% block content %}
+Pink
+{% endblock %}
