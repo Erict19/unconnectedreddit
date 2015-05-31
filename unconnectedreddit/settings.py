@@ -4,6 +4,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
 
+print "CHECKING_HEROKU!"
+ON_HEROKU = os.environ.get('ON_HEROKU')
+#ON_HEROKU = '1'
+#heroku config:set ON_HEROKU=1 
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -13,21 +18,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database.db',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
-}
-
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -149,7 +142,7 @@ LOGIN_URL=reverse_lazy('login')
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_URL=reverse_lazy('logout')
 
-# A sample logging configuration. The only tangible logging
+# A sample error logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
@@ -177,3 +170,31 @@ LOGGING = {
         },
     }
 }
+
+if ON_HEROKU == '1':
+# Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    print "ON_HEROKU!"
+    DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    }
+#DATABASES['default'] = dj_database_url.config()
+else:
+# Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    print "NOT_ON_HEROKU!"
+# DATABASES['default'] = dj_database_url.config()
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'database.db',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
