@@ -5,6 +5,8 @@ django-bootstrap-pagination==1.5.1
 django-registration-redux==1.2
 django-toolbelt==0.0.1
 gunicorn==19.3.0
+pam==0.1.4
+Pillow==2.8.1
 psycopg2==2.6
 South==1.0.2
 static3==0.6.1
