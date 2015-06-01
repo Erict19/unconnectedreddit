@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.core.urlresolvers import reverse
-from django.utils.timezone import now
+from django.utils import timezone
 from datetime import datetime, timedelta
 from math import log
 
@@ -39,7 +39,8 @@ class Link(models.Model):
             netvotes = 0
         order = log(max(abs(netvotes), 1), 10) #0.041392685 for zero votes
         sign = 1 if netvotes > 0 else -1 if netvotes < 0 else 0
-        td = self.submitted_on - epoch
+        unaware_submission = self.submitted_on.replace(tzinfo=None)
+        td = unaware_submission - epoch 
         epoch_submission = td.days * 86400 + td.seconds + (float(td.microseconds) / 1000000) #number of seconds from epoch till date of submission
         secs = epoch_submission - 1432201843 #a recent date, coverted to epoch time
         self.rank_score = round(sign * order + secs / 45000, 7)

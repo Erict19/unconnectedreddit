@@ -11,11 +11,6 @@ from django.http import HttpRequest
 class LinkDetailView(DetailView):
     model = Link
 
-class UserLinkView(ListView):
-    model = Link
-    queryset = Link.with_votes.all()
-    template_name = "user_links.html"
-
 class LinkListView(ListView):
     model = Link
     queryset = Link.with_votes.all() #by default, query_set was equal to: Link.objects.all(). We're overriding that to call "with_votes defined in models.py"
@@ -24,7 +19,7 @@ class LinkListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(LinkListView, self).get_context_data(**kwargs)
         if self.request.user.is_authenticated():
-            voted = Vote.objects.filter(voter=self.request.user)
+            voted = Vote.objects.filter(voter=self.request.user) #all links user voted on
             links_in_page = [link.id for link in context["object_list"]]
             voted = voted.filter(link_id__in=links_in_page)
             voted = voted.values_list('link_id', flat=True)

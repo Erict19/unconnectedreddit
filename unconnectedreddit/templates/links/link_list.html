@@ -10,7 +10,16 @@
 {% endif %}
 {% for link in object_list %}
 <form method="POST" action="{% url 'vote' %}" class="vote_form">
-	<li> [{{ link.rank_score }}{{ " rank" }}][{{ link.votes }}{{ " votes" }}]
+	<li> [{{ link.rank_score }}{{ " rank" }}]
+	{% if link.votes %}
+		{% if link.votes == 1 %}
+			[{{ "1 vote" }}]
+		{% else %}
+			[{{ link.votes }}{{ " votes" }}]
+		{% endif %}
+	{% else %}
+		[{{ "0 votes" }}]
+	{% endif %}	
 	{% csrf_token %} 
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}" />
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}" />
