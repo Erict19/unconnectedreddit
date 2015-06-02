@@ -1,20 +1,20 @@
 <html>
 <head>
-  <title>Unconnected Reddit</title>
+  <title>Talk 2 Me</title>
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
 </head>
 <body>
-<h1>Unconnected Reddit</h1>
+<h1>Talk 2 Me</h1>
 <div class="navbar">
 <p>
-    <a href="{% url 'home' %}">HOME</a> |
+    <a href="{% url 'home' %}">Home</a> |
 {% if user.is_authenticated %}
-    <a href="{% url 'link_create' %}">KUCH SHARE KARO</a> |
-    <a href="{% url 'logout' %}">LOGOUT</a> |
+    <a href="{% url 'link_create' %}">SHARE SOMETHING</a> |
+    <a href="{% url 'logout' %}">Logout</a> |
     <a href="{% url 'profile' slug=user.username %}"><b>{{ user.username }}</b></a> 
 {% else %}
-    <a href="{% url 'registration_register' %}">REGISTER</a> |
-    <a href="{% url 'login' %}">LOGIN</a> 
+    <a href="{% url 'registration_register' %}">Register</a> |
+    <a href="{% url 'login' %}">Login</a> 
 {% endif %}</p>
 </div>
 <div class="container">
