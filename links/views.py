@@ -75,7 +75,7 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
         user = self.request.user
         if self.request.method == 'POST':
             btn = self.request.POST.get("val")
-        if btn == "upvote":
+        if btn == u"\u2191":
             val = 1
         else:
             val = -1
