@@ -25,9 +25,6 @@ body {
 
 }
 
-.container{
-    padding: 2%;
-}
 
 #small_date {
     font-size: 70%;
@@ -99,13 +96,29 @@ h5 {
 
 textarea, input{
     width: 100%;
+    max-width: 200px;
+    min-width: 2px; 
+
 }
+
 
 .addurl  {
     text-align: left;
     padding: 5%;
     padding-top: 0%;
     
+}
+ label {
+    width: 1%;
+    float: left;
+    text-align:left;
+    margin-right: 1%;
+    
+    min-width: 100px;
+}
+
+input[type=submit]{
+    margin-top:1%
 }
 
 .date{
@@ -118,7 +131,7 @@ textarea, input{
 /*
   Steel Rumors theme by Arun Ravindran <http://arunrocks.com>
 */
-@import url(http://fonts.googleapis.com/css?family=Passion+One);
+
 
 html, body {
     
@@ -126,13 +139,10 @@ html, body {
     font: 100% Sans-Serif;
 }
 
-html {
-    color: #111;
-    background: rgba(1,1,1,0.025);
-}
+
 
 body {
-    background-color:#FFEEBE;
+    background-color:white;
     margin: 0 auto;
     position: relative;
     max-width: 100%;
@@ -144,12 +154,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-    
-}
-
 a {
     
-    color: #00399C;
+    color: black;
     text-decoration: none;
 }
 
@@ -203,10 +210,8 @@ h1 {
 }
 h3 {
 font: sans-serif;
-font-size: 4px;
-color:#eee;
-font-weight: bold;
-
+font-size: 4%;
+color:black;
 border-radius: 6px;
 
 }
@@ -264,3 +269,14 @@ footer{
 #id_comment{
     width: 100%;
 }
+
+.sharing{
+    color: red;
+    background-color: red;
+    
+
+    
+
+}
+
+
