@@ -16,20 +16,16 @@ html {
 }
 
 body {
-    margin: 0 auto;
+    
     min-height: 100%;
     position: relative;
-
     max-width: 600px;
-
-
 }
 
 
 #small_date {
     font-size: 70%;
-    margin-bottom: 0 auto;
-    
+   margin-bottom: 0 auto;    
 }
 
 #bolded ul{
@@ -117,9 +113,7 @@ textarea, input{
     min-width: 100px;
 }
 
-input[type=submit]{
-    margin-top:1%
-}
+
 
 .date{
     width: 100%;
@@ -147,6 +141,7 @@ body {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
+    width:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -156,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     
-    color: black;
+    color: blue;
     text-decoration: none;
 }
 
@@ -198,21 +193,26 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
 }
 
 h1 {
-    border-radius: 6px;
-    background-color: #FF5400;
+    
+    background-color: rgb(51,151,248);
     margin-right:auto;
     margin-left:auto;
-    padding:3%;
+    padding:2px;
     text-align:center;
     font-size: 30px;
     color: white;
+    font-family: sans-serif;
+    font:sans-serif;
+    font-weight: 200;
+    width:100%;
+
 
 }
 h3 {
 font: sans-serif;
 font-size: 4%;
 color:black;
-border-radius: 6px;
+
 
 }
 
@@ -237,7 +237,8 @@ video{
 
 header {
     background-color:rgb(0,174,230);
-    float: center; ;
+    float: center; 
+    width:100%;
 }
 
 footer{
@@ -247,11 +248,11 @@ footer{
 }
 
 .navbar {
-    background-color:green;
+    background-color:rgb(253,161,65);
     text-align: center;
     margin:auto;
     height:auto;
-    border-radius: 6px;
+    width:100%;
     margin-top:-20px;
     color:white;
     font-size: 80%;
@@ -261,22 +262,57 @@ footer{
     color:white;
 }
 
-.linkdetails {
-    margin-left: 2%;
-    margin-right:2%;
-}
+
 
 #id_comment{
     width: 100%;
 }
 
-.sharing{
-    color: red;
-    background-color: red;
-    
 
-    
+.voting {
+    background-color: rgba(142,143,147,0.5);
+    width: 25px;
+    border-color: blue;
+    border-style: solid;
 
+
+}
+
+#comment {
+    color:gray;
+    font-size: 10px;
+
+}
+
+#voting{
+    background-color:rgb(253,161,65);
+    width:100px;
+    font-weight: 100;
+    border-radius:6px;
+    color:white;
+    padding-left:2px;
+    padding-right:2px;
+}
+
+.margin{
+    margin-left:20px;
+    margin-right:20px;
+    max-width:350px;
+    padding: 10px;
+    border-radius:6px;
+    padding-top:5px;
+    padding-bottom:5px;
+    width: 100%;
+
+}
+
+.button{
+    width: 90px;
+    margin-top:1%;
+    
+    background-color: rgb(51,151,248);
+    margin-left:auto;
+    margin-right:auto;
 }
 
 

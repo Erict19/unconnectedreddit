@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="margin">
 <h2>New User?</h2>
 {% if form.errors %}
 <p>Invalid data. Please try again.</p>
@@ -8,6 +9,7 @@
 <form method="post" action="">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Register" />
+  <input class="button" type="submit" value="Register" />
 </form>
+</div>
 {% endblock %}

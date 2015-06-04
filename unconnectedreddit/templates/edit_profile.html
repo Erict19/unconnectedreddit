@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="margin">
 <h2>{{ user.username }}'s Profile</h2>
 
 <form method="post" action="">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Edit">
+  <input class="button" type="submit" value="Edit">
 </form>
-
+<div>
 {% endblock %}

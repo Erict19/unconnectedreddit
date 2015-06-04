@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {{ block.super }}
+<div class=margin>
 <h2>{{ object.username }}'s Profile</h2>
 	{% if object.userprofile.bio %}
 	<div>
@@ -12,4 +13,5 @@
 {% if object.username == user.username %}
 <p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
 {% endif %}
+</div>
 {% endblock %}
