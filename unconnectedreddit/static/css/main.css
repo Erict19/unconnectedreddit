@@ -2,6 +2,7 @@
   Steel Rumors theme by Arun Ravindran <http://arunrocks.com>
 */
 @import url(http://fonts.googleapis.com/css?family=Passion+One);
+@media screen and (min-device-width:2px) and (min-width: 2px) {
 
 html, body {
     margin: 0;
@@ -20,7 +21,8 @@ body {
     
     min-height: 100%;
     position: relative;
-    max-width: 600px;
+    min-width: 2px;
+
 }
 
 
@@ -106,12 +108,12 @@ textarea, input{
     
 }
  label {
-    width: 1%;
+    width: 25%;
     float: left;
     text-align:left;
     margin-right: 1%;
     
-    min-width: 100px;
+    min-width: 10%;
 }
 
 
@@ -317,3 +319,4 @@ footer{
 }
 
 
+}
