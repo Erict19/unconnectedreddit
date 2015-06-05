@@ -320,7 +320,7 @@ footer{
     margin-right:auto;
 }
 
-@media screen and (max-width: 150px) {
+@media screen and (max-device-width: 250px) {
     body {
         width: 100px;
         background-color: red;
