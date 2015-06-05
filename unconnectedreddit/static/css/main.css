@@ -2,7 +2,7 @@
   Steel Rumors theme by Arun Ravindran <http://arunrocks.com>
 */
 @import url(http://fonts.googleapis.com/css?family=Passion+One);
-@media screen and (min-device-width:2px) and (min-width: 2px) {
+
 
 html, body {
     margin: 0;
@@ -317,6 +317,30 @@ footer{
     margin-left:auto;
     margin-right:auto;
 }
+
+@media screen and (max-width: 150px){
+    body {
+        width: 100px;
+    }
+    .margin {
+        width: 100px;
+    }
+    .navbar {
+        width: 100px;
+    }
+    .container{
+        width: 100px;
+    }
+ p, ul, li{
+    width: 100px;
+ }
+
+ h1, h2, h3, h4, h5 {
+   font-size:12px;
+   color:black;
+ }
+
+
 
 
 }
