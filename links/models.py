@@ -6,8 +6,27 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 from math import log
 
-#class Category(models.Model):
-#	name = models.CharField(choices=CATEGORIES, max_length=20)
+
+GENDER = (
+('Aurat','Aurat'),
+('Mard','Mard'),
+    )
+
+STATUS = (
+('No','No'),
+('Yes','Yes'),
+    )
+
+CATEGS = (
+('1','Funny'),
+('2','Songs'),
+('3','Gupshup'),
+('4','Videos'),
+('5','Cricket'),
+('6','Photos'),
+('7','Ajeeb'),
+('8','Dosti'),
+    )
 
 class LinkVoteCountManager(models.Manager): #this class is derived from model manager
     def get_query_set(self): #all we're doing here is over-riding get_query_set. 
@@ -15,11 +34,12 @@ class LinkVoteCountManager(models.Manager): #this class is derived from model ma
              #using a parent-class function here, over-riding query_set to include count field
 # annotate allows annotating the results of any query_set with some aggregate function like sum, count, average
 class Link(models.Model):
-    description = models.CharField("Kuch bolo", max_length=500)
+    description = models.CharField("Kuch likhain", max_length=500)
     submitter = models.ForeignKey(User) # link.submitter is a user!
     submitted_on = models.DateTimeField(auto_now_add=True)
     rank_score = models.FloatField(default=0.0)
     url = models.URLField("Link (if any)", max_length=250, blank=True)
+    cagtegory = models.CharField(choices=CATEGS, default=1, max_length=25)
     
     with_votes = LinkVoteCountManager() #change this to set_rank()
     objects = models.Manager() #default, in-built manager
@@ -46,7 +66,6 @@ class Link(models.Model):
         self.rank_score = round(sign * order + secs / 45000, 7)
         self.save() # this persists the rank_score in the database
         # the score doesn't decay as time goes by, but newer stories get a higher score over time. 
-       # return LinkVoteCountManager()
 
 class Vote(models.Model):
     voter = models.ForeignKey(User) #what user.id voted
@@ -58,7 +77,11 @@ class Vote(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
-    bio = models.TextField(null=True)
+    bio = models.TextField("Apney baarey mein koi khaas baat batain", default='Ao gupshup lagain...', null=True)
+    mobilenumber = models.CharField("Mobile Number ", null=True, max_length=50) #added mobile number to model, form and __init__
+    gender = models.CharField("aurat ho ya mard?", choices=GENDER, default='Aurat', max_length=25)
+    age = models.PositiveIntegerField("Kitni umr hai?", null=True)
+    status = models.CharField("Shaadi kar li hai?", choices=STATUS, default='No', max_length=25)
 
     def __unicode__(self):
         return "%s's profile" % self.user
@@ -67,7 +90,7 @@ def create_profile(sender, instance, created, **kwargs):
     if created:
         profile, created = UserProfile.objects.get_or_create(user=instance)
 
-# Signal while saving user
+# Signal, while saving user
 from django.db.models.signals import post_save
 post_save.connect(create_profile, sender=User)
 

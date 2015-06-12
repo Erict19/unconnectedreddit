@@ -9,16 +9,17 @@
 </style>
 <div class="margin">
 {% if object.submitter == user %}
-  <a href="{% url 'link_update' pk=object.pk %}">Edit</a> | 
-  <a href="{% url 'link_delete' pk=object.pk %}">Delete</a>
+  <a style="font-size:10px" href="{% url 'link_update' pk=object.pk %}">Edit <b style="color:black">|</b></a> 
+  <a style="font-size:10px" href="{% url 'link_delete' pk=object.pk %}"> Delete</a>
 {% endif %}
 <div class="desc">
-<h4><a href="{% url 'profile' slug=object.submitter %}">{{ object.submitter }}</a>: {{ object.description }}</h4>
+<p><a href="{% url 'profile' slug=object.submitter %}"><b>{{ object.submitter }}</b></a>: <a class="info">{{ object.description }}</a></p>
 
 <a href="{{ object.link }}">{{ object.url }}</a>
 
 <div class="comments">
-  <h3>Comments</h3>
+<p style="color:gray"><hr /></p>
+  <h3>Comments:</h3>
 
   <div class="comment_form">
 {% if user.is_authenticated %}
@@ -36,10 +37,10 @@
     <input type="hidden" name="url" value="" />
     <input type="hidden" name="next" 
      value="{% url 'link_detail' pk=object.id %}" />
-   <h3> <input class="button"  style="width:150px" type="submit" value="Add comment" id="id_submit" /></h3>
+   <h3> <input class="button"  style="width:110px" type="submit" value="Add comment" id="id_submit" /></h3>
   </form>
 {% else %}
-  <p><i>Comment karney ke liye <a href="{% url 'login' %}">log in</a> karien.</i></p>
+  <p><i>Comment karney ke liye <a href="{% url 'login' %}">login</a> karien.</i></p>
 {% endif %}
   </div>
   </div>
@@ -50,7 +51,7 @@
   <div class="comment">
   <a href="{% url 'profile' slug=comment.user_name %}">{{ comment.user_name }}</a>
     {{ ':' }}
-    {{ comment.comment }}
+    <a class="info">{{ comment.comment }}</a>
     </div>
    <div class="date">
    {{ comment.submit_date }}

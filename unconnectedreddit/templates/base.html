@@ -1,7 +1,8 @@
 <html>
 <head>
-  <title>Talk 2 Me</title>
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+  <title>Damadam</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 400px)" href="{{ STATIC_URL }}css/main2.css" />
 
 
         <meta charset="utf-8">
@@ -11,15 +12,17 @@
         <meta name="author" content="">
 </head>
 <body>
-<h1>Talk 2 Me</h1>
+<h1>Damadam</h1>
+<h5>Bindass gupshup aur Internet links!</h5>
 <div class="navbar">
 <p>
     <a href="{% url 'home' %}">Home</a> |
 {% if user.is_authenticated %}
-    <a class= "sharing" href="{% url 'link_create' %}">SHARE SOMETHING</a> |
+    <a class= "sharing" href="{% url 'link_create' %}"><b>KUCH LIKHAIN</b></a> |
     <a href="{% url 'logout' %}">Logout</a> |
-    <a href="{% url 'profile' slug=user.username %}"><b>{{ user.username }}</b></a> 
+    <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a> 
 {% else %}
+    <a href="{% url 'login' %}"><b>KUCH LIKHAIN</b></a> |
     <a href="{% url 'registration_register' %}">Register</a> |
     <a href="{% url 'login' %}">Login</a> 
 {% endif %}</p>

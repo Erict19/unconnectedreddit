@@ -131,8 +131,9 @@ INSTALLED_APPS = (
     'links',
     'unconnectedreddit',
     'south',
-    'registration',
+    'registration', #found at has@has-VirtualBox:~/.virtualenvs/unconnectedreddit/local/lib/python2.7/site-packages/registration/backends/simple$
     'bootstrap_pagination',
+    'djcelery',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -199,3 +200,37 @@ else:
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+import djcelery
+djcelery.setup_loader()
+# config settings for Celery Daemon
+
+# Redis broker
+BROKER_URL = 'redis://localhost:6379/0'
+
+# List of modules to import when celery starts, in myapp.tasks form. 
+CELERY_IMPORTS = ('links.tasks', )  
+
+CELERY_ALWAYS_EAGER = False
+
+# default RabbitMQ backend
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+#The backend is the resource which returns the results of a completed task from Celery. 6379 is the default port to the redis server.
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_IGNORE_RESULT=True
+
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    'tasks.rank_all': {
+        'task': 'tasks.rank_all',
+        'schedule': timedelta(seconds=30),
+    },
+}
+
+CELERY_TIMEZONE = 'UTC'
+

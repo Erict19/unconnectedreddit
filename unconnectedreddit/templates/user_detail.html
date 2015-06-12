@@ -2,16 +2,40 @@
 {% block content %}
 {{ block.super }}
 <div class=margin>
-<h2>{{ object.username }}'s Profile</h2>
-	{% if object.userprofile.bio %}
+<h2>{{ object.username }} ki profile</h2>
 	<div>
-	<b>Bio:</b>
-	{{ object.userprofile.bio }}
+	<b class="profile">About:</b>
+	{% if object.userprofile.bio %}
+	<a class="info">{{ object.userprofile.bio }}</a>
+	</div>
+	{% endif %}
+	<div>
+	<b class="profile">Gender:</b>
+	{% if object.userprofile.gender %}
+	<a class="info">{{ object.userprofile.gender }}</a>
+	</div>
+	{% endif %}
+	<div>
+	<b class="profile">Mobile Number:</b>
+	{% if object.userprofile.mobilenumber %}
+	<a class="info">{{ object.userprofile.mobilenumber }}</a>
+	</div>
+	{% endif %}
+	<div>
+	<b class="profile">Age:</b>
+	{% if object.userprofile.age %}
+	<a class="info">{{ object.userprofile.age }}</a>
+	</div>
+	{% endif %}
+	<div>
+	<b class="profile">Shaadi shuda:</b>
+	{% if object.userprofile.status %}
+	<a class="info">{{ object.userprofile.status }}</a>
 	</div>
 	{% endif %}
 
 {% if object.username == user.username %}
-<p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
+<p><a href='{% url "edit_profile" %}'>Change my profile</a></p>
 {% endif %}
 </div>
 {% endblock %}

@@ -1,7 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    font: 14px/21px Helvetica, Sans-Serif;
+    height: 100%;
+    font: 14px/21px Arial;
 }
 
 html {
@@ -10,16 +11,15 @@ html {
 }
 
 body {
+   
     
     position: relative;
-    width: 100px;
-
 }
 
 
 #small_date {
-    font-size:2px ;
-   margin-bottom: 0 auto;    
+    font-size: 70%;
+   margin-bottom: 0 auto;   
 }
 
 #bolded {
@@ -30,7 +30,7 @@ body {
 #bolded ul{
 
     list-style: none;
-    
+   
 }
 
 #bolded li li{margin-left: 1; padding-left: 0;}
@@ -46,33 +46,20 @@ body {
 
 }
 
-h4{
-    color: black;
-    background-color: none;
 
-}
 
-h1, h2, h3, h4, h6 {
-    color: #FF0031;
-}
 
-h2 {
-    font-size: 10px;
-}
 
 a {
-    
+   
     color: #00399C;
     text-decoration: none;
-    font-size: 12px;
 }
 
 h2 a {
     background: transparent;
     color: #FF0031;
-    font-size: 10px;
 }
-
 
 button, input[type="button"], input[type="reset"], input[type="submit"]
 {
@@ -82,38 +69,49 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
     -moz-border-radius: 4px;
     border-radius: 4px;
     border: solid 1px #20538D;
+
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     color:blue;
-    
+    background-color: rgba(0,0,0,0.05)
 }
 
+h4{
+    color: black;
+    background-color: none;
+    text-decoration: none;
+}
 h5 {
-    font-size: 10px;
+    font-size: 15px;
     background-color: rgb(51,151,248);
     margin-right:auto;
     margin-left:auto;
     padding:2px;
     text-align:center;
-    font-family: sans-serif;
-    font:sans-serif;
-    font-weight: 200;
-    margin-top: -15px;
+    font-size: 20px;
+    font-family: arial;
+    font:arial;
+    font-weight: 50;
+    width:100%;
+    margin-top: -30px;
     color:white;
+    padding-bottom: 10px;
+    
 }
 .comment{
-    width: 100px;
+    width: 100%;
     display:inline;
-    
+   
 }
 
 
 
 textarea, input{
-    width: 100px;
-     
+    width: 100%;
+    max-width: 200px;
+    min-width: 2px;
 
 }
 
@@ -122,22 +120,19 @@ textarea, input{
     text-align: left;
     padding: 5%;
     padding-top: 0%;
-    
+   
 }
  label {
-    width: 100px;
+    width: 1%;
     float: left;
     text-align:left;
     margin-right: 1%;
-    font-size: 10px;
-    
-    
-}
+    min-width: 100px;
+    font-size: 100%;
 
-.link {
-    
-    font-size: 10px;
-    color: orange;
+}
+i{
+    font-size: 100%;
 }
 
 
@@ -151,10 +146,11 @@ textarea, input{
 
 
 
+
 html, body {
-    
+   
     height: 100%;
-    font: 100% Sans-Serif;
+    font: 100% Arial;
 }
 
 
@@ -163,19 +159,16 @@ body {
     background-color:white;
     margin: 0 auto;
     position: relative;
+    max-width: 100%;
     margin: 0 auto;
-    width:120px;
-    height: 2000px;
+    width:100%;
 }
 
-h1, h2, h3, h4, h6 {
-    color: black;
-}
 
 
 
 a {
-    
+   
     color: blue;
     text-decoration: none;
 }
@@ -218,25 +211,24 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
 }
 
 h1 {
-    
+   
     background-color: rgb(51,151,248);
     margin-right:auto;
     margin-left:auto;
     padding:2px;
     text-align:center;
-    font-size: 15px;
+    font-size: 30px;
     color: white;
-    font-family: sans-serif;
-    font:sans-serif;
+    font-family: arial;
+    font:arial;
     font-weight: 700;
     width:100%;
-    
 
 
 }
 h3 {
-font: sans-serif;
-font-size: 4%;
+font: arial;
+font-size: 100%;
 color:black;
 
 
@@ -247,7 +239,7 @@ img {
     max-width: 100%;
     float: center;
 
-    
+   
 }
 video{
     max-width: 50%;
@@ -263,8 +255,8 @@ video{
 
 header {
     background-color:rgb(0,174,230);
-    float: center; 
-    width:120px;
+    float: center;
+    width:100%;
 }
 
 footer{
@@ -278,41 +270,43 @@ footer{
     text-align: center;
     margin:auto;
     height:auto;
-    width:120px;
-    margin-top:-20px;
+    width:100%;
+    margin-top:-35px;
     color:blue;
-    font-size: 10px;
-
+    font-size: 80%;
 }
 
 .navbar a{
     color:blue;
-    font-size: 10px;
 }
 
-
+h2 {
+    font-size: 20px;
+}
 
 #id_comment{
-    width: 110px;
+    width: 100%;
 }
 
-
-
-
-#comment {
-    color:gray;
-    font-size: 10px;
-
-}
 
 .voting {
     background-color: rgba(0,0,0,0.05);
-    width: 20px;
+    width: 25px;
     border-color: blue;
     border-style: solid;
     color:blue;
     border-color: blue;
+    font-size:100%;
+
+
+}
+a{
+    font-size: 100%;
+}
+#comment {
+    color:gray;
     font-size: 10px;
+
 }
 
 #voting{
@@ -323,62 +317,47 @@ footer{
     color:gray;
     padding-left:2px;
     padding-right:2px;
-    font-size: 10px;
+    font-size:80%;
 }
 
 .margin{
-    margin-left:2px;
-    margin-right:2px;
-    padding: 5px;
+    margin-left:20px;
+    margin-right:20px;
+    max-width: 1250px;
+
+    padding: 10px;
     border-radius:6px;
     padding-top:5px;
     padding-bottom:5px;
-    width: 110px;
+    width: 100%;
 
 }
 
-i{
-    font-size:10px;
-}
-
-.button{
-    width: 50px;
+.button{     
+    width: 90px;
     margin-top:1%;
-    font-size:10px;
-    
+    color:blue;
+    border-color: blue;
     background-color: rgba(0,0,0,0.05);
     margin-left:auto;
     margin-right:auto;
+    font-size: 100%;
 }
-
 .container li {
     color:gray;
     size:10px;
 }
 
-.container{
-    margin-left: -5px;
-}
-
-.profile {
-    font-size: 10px;
-    font:arial;
+.link {
     
+    font-size: 10px;
+    color: orange;
 }
-
-h6{
-    size:10px;
-
-}
-
-.info {
-    color: black;
-}
+.profile {
+    font-size: 18px;
+    font:arial;
+    text-decoration: none;
 
 }
 
-
-
-
-
-
+}

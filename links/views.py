@@ -7,6 +7,11 @@ from .forms import UserProfileForm, LinkForm, VoteForm
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpRequest
+#from registration.backends.simple.views import RegistrationView
+
+#class MyRegistrationView(RegistrationView):
+#    def get_success_url(self, request, user):
+#        return '/'
 
 class LinkDetailView(DetailView):
     model = Link
@@ -59,11 +64,12 @@ class LinkCreateView(CreateView):
     model = Link
     form_class = LinkForm
 
-    def form_valid(self, form):
+    def form_valid(self, form): #this processes the form before it gets saved to the database
         f = form.save(commit=False)
         f.rank_score = 0.0
         f.submitter = self.request.user
         f.with_votes = 0
+        f.category = '1'
         f.save()
         return super(CreateView, self).form_valid(form)
 
@@ -81,7 +87,6 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
             val = -1
         prev_votes = Vote.objects.filter(voter=user, link=link) #has the user already voted? If so, we'll find out via this
         has_voted = (prev_votes.count() > 0)
-        #referer = self.request.headers['Referer']
         if not has_voted: #this only works if the user has NOT voted before
             # add vote
             Vote.objects.create(voter=user, link=link, value=val) #if user hasn't voted, add the up or down vote in the DB.

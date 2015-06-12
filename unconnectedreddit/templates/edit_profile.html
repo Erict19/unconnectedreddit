@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="margin">
-<h2>{{ user.username }}'s Profile</h2>
+<h2>{{ user.username }} ki profile</h2>
 
 <form method="post" action="">
   {% csrf_token %}
   {{ form.as_p }}
-  <input class="button" type="submit" value="Edit">
+  <input class="button" type="submit" value="Save">
 </form>
 <div>
 {% endblock %}
