@@ -10,11 +10,16 @@ ON_HEROKU = os.environ.get('ON_HEROKU')
 #heroku config:set ON_HEROKU=1 
 #heroku ps:scale web=1 to put in a dyno
 
-DEBUG = False ################# change this in live environment
-TEMPLATE_DEBUG = False
+if ON_HEROKU == '1':
+    DEBUG=False
+else:
+    DEBUG=True
+
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Hassan Baig', 'baig.hassan@gmail.com'),
+    ('Sophie Pervez', 'spz3113@gmail.com'),
 )
 
 MANAGERS = ADMINS
