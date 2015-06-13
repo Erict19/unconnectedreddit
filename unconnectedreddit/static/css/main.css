@@ -270,7 +270,7 @@ footer{
 
 #comment {
     color:gray;
-    font-size: 8px;
+    font-size: 10px;
 
 }
 
@@ -308,7 +308,7 @@ footer{
 }
 
 i{
-    font-size:8px;
+    font-size:10px;
 }
 
 .button{
@@ -323,7 +323,7 @@ i{
 
 .container li {
     color:gray;
-    font-size:8px;
+    font-size:10px;
     vertical-align: left;
 }
 
@@ -332,13 +332,13 @@ i{
 }
 
 .profile {
-    font-size: 8px;
+    font-size: 10px;
     font:arial;
     
 }
 
 h6{
-    font-size:8px;
+    font-size:10px;
 
 }
 
