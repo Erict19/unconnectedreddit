@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font: 14px/21px Helvetica, Sans-Serif;
+    font: 14px/21px Arial;
 }
 
 html {
@@ -230,7 +230,7 @@ h1 {
     font-family: sans-serif;
     font:sans-serif;
     font-weight: 700;
-    width:100%;
+    width:100px;
     
 
 
@@ -265,7 +265,7 @@ video{
 header {
     background-color:rgb(0,174,230);
     float: center; 
-    width:120px;
+    width:100px;
 }
 
 footer{
@@ -279,7 +279,7 @@ footer{
     text-align: center;
     margin:auto;
     height:auto;
-    width:120px;
+    width:100px;
     margin-top:-20px;
     color:blue;
     font-size: 10px;
