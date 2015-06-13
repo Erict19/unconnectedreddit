@@ -12,8 +12,8 @@ html {
 
 body {
     
-    position: relative;
     width: 100px;
+    vertical-align: left;
 
 }
 
@@ -174,7 +174,6 @@ html, body {
 body {
     background-color:white;
     margin: 0 auto;
-    position: relative;
     margin: 0 auto;
     width:100px;
     height: 2000px;
@@ -275,7 +274,7 @@ video{
 
 header {
     background-color:rgb(0,174,230);
-    float: center; 
+    float: left; 
     width:100px;
 }
 
@@ -305,7 +304,7 @@ footer{
 
 
 #id_comment{
-    width: 110px;
+    width: 100px;
 }
 
 
@@ -345,7 +344,8 @@ footer{
     border-radius:6px;
     padding-top:5px;
     padding-bottom:5px;
-    width: 110px;
+    width: 100px;
+    vertical-align: left;
 
 }
 
@@ -366,6 +366,7 @@ i{
 .container li {
     color:gray;
     size:10px;
+    vertical-align: left;
 }
 
 .container{
