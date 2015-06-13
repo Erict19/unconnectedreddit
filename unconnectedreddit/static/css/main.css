@@ -156,6 +156,7 @@ html, body {
     
     height: 100%;
     font: 100% Sans-Serif;
+    width:100px;
 }
 
 
@@ -165,7 +166,7 @@ body {
     margin: 0 auto;
     position: relative;
     margin: 0 auto;
-    width:120px;
+    width:100px;
     height: 2000px;
 }
 
