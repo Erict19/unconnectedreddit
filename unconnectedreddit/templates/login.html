@@ -11,12 +11,11 @@
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
   {% csrf_token %}
   
-     <label> {{ 'Nickname:' }}</label>
-      {{ form.username }}
-    </tr>
-    <tr>
-      <label>{{ 'Password:' }}</label>
-      {{ form.password }}
+    <p>{{ 'Nickname:' }}
+      {{ form.username }}</p>
+  
+    <p>  {{ 'Password:' }}
+      {{ form.password }}</p>
    
   
   <input class="button" type="submit" value="Login" />

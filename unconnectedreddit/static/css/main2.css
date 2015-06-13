@@ -59,7 +59,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     color:blue;
-    background-color: rgba(0,0,0,0.05)
+    background-color: rgba(0,0,0,0.05);
+    font-size:100%;
 }
 
 h4{
@@ -70,9 +71,8 @@ h4{
 h5 {
 
     background-color: rgb(51,151,248);
-    margin-right:auto;
-    margin-left:auto;
-    padding:2px;
+    
+   
     text-align:center;
     font-size: 20px;
     font-family: arial;
@@ -161,19 +161,7 @@ h2 a {
     display:block;
 }
 
-button, input[type="button"], input[type="reset"], input[type="submit"]
-{
-    cursor: pointer;
-    -webkit-appearance: button;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    border: solid 1px #20538D;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-}
+
 
 
 .btn-warning  {
@@ -195,9 +183,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
 h1 {
    
     background-color: rgb(51,151,248);
-    margin-right:auto;
-    margin-left:auto;
-    padding:2px;
+    
+    
     text-align:center;
     font-size: 30px;
     color: white;
@@ -236,6 +223,7 @@ video{
 
 
 header {
+    margin-top:-20px;
     background-color:rgb(0,174,230);
     float: left;
     width:100%;
@@ -255,7 +243,7 @@ footer{
     width:100%;
     margin-top:-35px;
     color:blue;
-    font-size: 80%;
+    font-size: 100%;
 }
 
 .navbar a{
@@ -310,7 +298,7 @@ a{
     border-radius:6px;
     padding-top:5px;
     padding-bottom:5px;
-    width: 80%;
+    width: 90%;
 }
 
 .button{     
