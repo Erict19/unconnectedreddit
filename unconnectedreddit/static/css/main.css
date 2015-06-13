@@ -1,22 +1,4 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font: 14px/21px Arial;
-    margin-left: 0px;
-}
 
-html {
-    
-    width: 100px;
-    margin-left: 0px;
-}
-
-body {
-    
-    width: 100px;
-    margin-left: 0px;
-
-}
 
 
 #small_date {
@@ -113,6 +95,7 @@ h5 {
     font-weight: 200;
     margin-top: -15px;
     color:white;
+    width:100px;
 }
 .comment{
     width: 100px;
@@ -162,25 +145,7 @@ textarea, input{
 
 
 
-html, body {
-    
-    height: 100%;
-    font: 100% Sans-Serif;
-    width:100px;
-    background-color: white;
-    margin-left: 0px;
-}
 
-
-
-body {
-    background-color:white;
-    margin-left: 0px;
-    margin: 0 auto;
-    width:100px;
-    height: 2000px;
-
-}
 
 h1, h2, h3, h4, h6 {
     color: black;
@@ -292,7 +257,7 @@ footer{
     text-align: center;
     margin:auto;
     height:auto;
-    width:100px;
+    width:104px;
     margin-top:-20px;
     color:blue;
     font-size: 10px;
@@ -389,6 +354,20 @@ h6{
 
 .info {
     color: black;
+}
+
+html{
+    width: 100px;
+    font-family: arial;
+    margin-left: 0px;
+
+}
+
+body{
+    width:100px;
+    font-family: arial;
+    font: arial;
+    margin-left: 0px
 }
 
 }

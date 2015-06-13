@@ -1,21 +1,4 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font: 14px/21px Arial;
-}
 
-html {
-    color: #111;
-    background: #eee;
-    width:100%;
-    vertical-align: left;
-}
-
-body {
-   
-    width:100%;
-}
 
 
 #small_date {
@@ -145,24 +128,23 @@ i{
     font-size: 70%
 }
 
-
-
-
-html, body {
-   
-    height: 100%;
-    font: 100% Arial;
-}
-
-
-
-body {
-    background-color:white;
-    margin: 0 auto;
-    max-width: 100%;
-    margin: 0 auto;
+html{
     width:100%;
+    font-family: arial;
+    height:100%;
+    margin-left: 0px;
 }
+
+body{
+    width:100%;
+    font-family: arial;
+    font: arial;
+    margin-left: 0px
+}
+}
+
+
+
 
 
 
