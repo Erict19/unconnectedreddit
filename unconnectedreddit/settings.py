@@ -10,8 +10,8 @@ ON_HEROKU = os.environ.get('ON_HEROKU')
 #heroku config:set ON_HEROKU=1 
 #heroku ps:scale web=1 to put in a dyno
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False ################# change this in live environment
+TEMPLATE_DEBUG = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
