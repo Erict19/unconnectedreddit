@@ -6,7 +6,8 @@ html, body {
 
 html {
     
-    width: 110px;
+    width: 100px;
+    vertical-align: left;
 }
 
 body {
