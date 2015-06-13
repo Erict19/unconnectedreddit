@@ -7,13 +7,13 @@ html, body {
 html {
     
     width: 100px;
-    vertical-align: left;
+    margin-left: 0px;
 }
 
 body {
     
     width: 100px;
-    vertical-align: left;
+    margin-left: 0px;
 
 }
 
@@ -345,7 +345,7 @@ footer{
     padding-top:5px;
     padding-bottom:5px;
     width: 100px;
-    vertical-align: left;
+    
 
 }
 
