@@ -5,8 +5,7 @@ html, body {
 }
 
 html {
-    color: #111;
-    background: #eee;
+    
     width: 110px;
 }
 
@@ -26,6 +25,7 @@ body {
 #bolded {
     margin-left:-60px;
     margin-right:auto;
+    background-color: white;
 }
 
 #bolded ul{
@@ -40,6 +40,14 @@ body {
 
     display:inline;
 
+}
+#chromeFix {
+    display:block;
+    position:absolute;
+    width:1px;
+    height:100%;
+    top:0px;
+    left:0px;
 }
 
 #padded ul{
@@ -157,6 +165,7 @@ html, body {
     height: 100%;
     font: 100% Sans-Serif;
     width:100px;
+    background-color: white;
 }
 
 
