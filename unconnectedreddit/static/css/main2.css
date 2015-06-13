@@ -8,6 +8,7 @@ html, body {
 html {
     color: #111;
     background: #eee;
+    width:100%;
 }
 
 body {
@@ -346,6 +347,10 @@ a{
 .container li {
     color:gray;
     size:10px;
+}
+
+.container{
+    margin-left: 0px;
 }
 
 .link {
