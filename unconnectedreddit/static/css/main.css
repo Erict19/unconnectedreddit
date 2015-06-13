@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font: 14px/21px Arial;
+    margin-left: 0px;
 }
 
 html {
@@ -20,7 +21,7 @@ body {
 
 #small_date {
     font-size:2px ;
-   margin-bottom: 0 auto;    
+   margin-bottom: 0px;    
 }
 
 #bolded {
@@ -167,16 +168,18 @@ html, body {
     font: 100% Sans-Serif;
     width:100px;
     background-color: white;
+    margin-left: 0px;
 }
 
 
 
 body {
     background-color:white;
-    margin: 0 auto;
+    margin-left: 0px;
     margin: 0 auto;
     width:100px;
     height: 2000px;
+
 }
 
 h1, h2, h3, h4, h6 {
