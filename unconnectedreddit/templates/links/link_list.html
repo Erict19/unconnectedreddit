@@ -21,14 +21,14 @@
 	{% else %}
 		<b id="voting">{{ "0 votes" }}</b>
 	{% endif %}	 
-	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}" />
-	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}" />
-	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1" />
+	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
+	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
+	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">
 	{% if not user.is_authenticated %}
 	<button disabled title="LOGIN karien takey vote kar sakien">vote</button>
 	{% elif link.pk not in voted %}	
-	<input class="voting" type="submit" id="id_valup" name="val" value="↑" />
-	<input  class="voting" type="submit" id="id_valdown" name="val" value="↓" />
+	<input class="voting" type="submit" id="id_valup" name="val" value="↑">
+	<input  class="voting" type="submit" id="id_valdown" name="val" value="↓">
 	{% else %}
 	<button>unvote</button>
 	{% endif %}

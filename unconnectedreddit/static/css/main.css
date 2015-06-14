@@ -3,7 +3,7 @@
 
 #small_date {
     font-size:2px ;
-   margin-bottom: 0px;    
+    margin-bottom: auto;    
 }
 
 #bolded {
@@ -18,7 +18,11 @@
     
 }
 
-#bolded li li{margin-left: 1; padding-left: 0;}
+#bolded li li{
+
+    margin-left: 1px; 
+    padding-left: 0px;
+}
 
 #bolded li{
 
@@ -41,8 +45,7 @@
 
 h4{
     color: black;
-    background-color: none;
-
+   /* background-color: none;*/
 }
 
 h1, h2, h3, h4, h6 {
@@ -93,7 +96,7 @@ h5 {
     text-align:center;
     font-family: sans-serif;
     font:sans-serif;
-    font-weight: 200;
+    font-weight: normal;
     margin-top: -20px;
     color:white;
     width:120px;
@@ -213,7 +216,7 @@ color:black;
 img {
 
     max-width: 100%;
-    float: center;
+    float: none;
 
     
 }
@@ -236,7 +239,7 @@ header {
     margin-top: -10px;
 }
 
-footer{
+.foot {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -347,6 +350,7 @@ h6{
 
 html{
     width: 120px;
+    background-color:#FFFFFF;
     font-family: arial;
     margin-left: 0px;
     margin-top:-15px;
@@ -359,8 +363,6 @@ body{
     font: arial;
     margin-left: 0px;
     margin-top:-15px;
-}
-
 }
 
 

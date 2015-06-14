@@ -32,12 +32,12 @@
     {{ form.object_pk }}
     {{ form.timestamp }}
     {{ form.security_hash }}
-    <input type="hidden" name="name" value="{{ user }}" />
-    <input type="hidden" name="email" value="{{ user.email|default:'d@ummy.com' }}" />
-    <input type="hidden" name="url" value="" />
+    <input type="hidden" name="name" value="{{ user }}">
+    <input type="hidden" name="email" value="{{ user.email|default:'d@ummy.com' }}">
+    <input type="hidden" name="url" value="">
     <input type="hidden" name="next" 
-     value="{% url 'link_detail' pk=object.id %}" />
-   <h3> <input class="button"  style="width:110px" type="submit" value="Add comment" id="id_submit" /></h3>
+     value="{% url 'link_detail' pk=object.id %}">
+   <h3> <input class="button"  style="width:110px" type="submit" value="Add comment" id="id_submit"></h3>
   </form>
 {% else %}
   <p><i>Comment karney ke liye <a href="{% url 'login' %}">login</a> karien.</i></p>

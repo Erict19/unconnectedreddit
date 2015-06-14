@@ -3,7 +3,7 @@
 
 #small_date {
     font-size: 70%;
-   margin-bottom: 0 auto;   
+    margin-bottom: auto;   
 }
 
 #bolded {
@@ -17,7 +17,11 @@
    
 }
 
-#bolded li li{margin-left: 1; padding-left: 0;}
+#bolded li li{
+
+    margin-left: 1px; 
+    padding-left: 0px;
+}
 
 #bolded li{
 
@@ -65,7 +69,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
 
 h4{
     color: black;
-    background-color: none;
+    /*background-color: none;*/
     text-decoration: none;
 }
 h5 {
@@ -77,7 +81,7 @@ h5 {
     font-size: 20px;
     font-family: arial;
     font:arial;
-    font-weight: 50;
+    font-weight: lighter;
     width:100%;
     margin-top: -30px;
     color:white;
@@ -130,6 +134,7 @@ i{
 
 html{
     width:100%;
+    background-color:#FFFFFF;
     font-family: arial;
     height:100%;
     margin-left: 0px;
@@ -141,7 +146,7 @@ body{
     font: arial;
     margin-left: 0px
 }
-}
+
 
 
 
@@ -206,7 +211,7 @@ color:black;
 img {
 
     max-width: 100%;
-    float: center;
+    float: none;
 
    
 }
@@ -229,7 +234,7 @@ header {
     width:100%;
 }
 
-footer{
+.foot {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -311,9 +316,10 @@ a{
     margin-right:auto;
     font-size: 100%;
 }
+
 .container li {
     color:gray;
-    size:10px;
+    /*size:10px;*/
 }
 
 
@@ -334,7 +340,5 @@ a{
     font-size: 18px;
     font:arial;
     text-decoration: none;
-
-}
 
 }

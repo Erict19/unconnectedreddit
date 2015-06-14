@@ -7,7 +7,7 @@
 <form method="post" action="{% url 'link_delete' pk=object.pk %}">
   {% csrf_token %}
   <a href="{% url 'link_detail' pk=object.pk %}">Nahi Mitao</a> 
-  <p><input type="submit" value="Mita do" /></p>
+  <p><input type="submit" value="Mita do"></p>
 </form> 
 </div>
 {% endblock %}

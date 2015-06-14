@@ -3,7 +3,7 @@
 {% block content %}
 <div class="margin">
 <h2>Login</h2>
-<p><i>Agar pehlay kabhi login nahi kiya tou <a href="{% url 'registration_register' %}">register</a> karien.</i></p>
+<p>Agar pehlay kabhi login nahi kiya tou <a href="{% url 'registration_register' %}">register</a> karien.</p>
 {% if form.errors %}
 <p>Nickname aur password wohi honay chahiye jin se register kiya tha. Bhool gaye hain tou doobara register karien.</p>
 {% endif %}
@@ -18,8 +18,8 @@
       {{ form.password }}</p>
    
   
-  <input class="button" type="submit" value="Login" />
-  <input type="hidden" name="next" value="{{ next }}" />
+  <input class="button" type="submit" value="Login">
+  <input type="hidden" name="next" value="{{ next }}">
 </form>
 </div>
 {% endblock %}

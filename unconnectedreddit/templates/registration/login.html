@@ -5,7 +5,7 @@
 <h2>Nickname aur password wohi honay chahiye jin se pehlay register kiya tha!</h2>
 
 {% if form.errors %}
-<p><i>Bhool gaye hain tou dubara <a href="{% url 'registration_register' %}">register</a> karien.</i></p>
+<p>Bhool gaye hain tou dubara <a href="{% url 'registration_register' %}">register</a> karien.</p>
 {% endif %}
 
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
@@ -16,8 +16,8 @@
       <p>{{ 'Password:' }}</p>
       {{ form.password }}
   
-  <input class="button" type="submit" value="Login" />
-  <input type="hidden" name="next" value="{{ next }}" />
+  <input class="button" type="submit" value="Login">
+  <input type="hidden" name="next" value="{{ next }}">
 </form>
 </div>
 {% endblock %}
