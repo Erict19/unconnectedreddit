@@ -213,22 +213,6 @@ color:black;
 
 }
 
-img {
-
-    max-width: 100%;
-    float: none;
-
-    
-}
-video{
-    max-width: 50%;
-    background-color: white;
-    margin-top: 15%;
-    margin-bottom:15%;
-}
-.movie {
-    background-color: rgba(0,0,0,0.25);
-}
 
 
 
@@ -325,8 +309,13 @@ i{
 }
 
 .container li {
-    color:gray;
+    color:black;
 
+}
+
+.blacklist {
+    color:black;
+    font-weight:100;
 }
 
 .container{
