@@ -19,11 +19,11 @@
 <p>
     <a href="{% url 'home' %}">Home</a> |
 {% if user.is_authenticated %}
-    <a class="sharing" href="{% url 'link_create' %}"><b>KUCH LIKHAIN</b></a> |
-    <a href="{% url 'logout' %}">Logout</a> |
+    <a class="sharing" href="{% url 'link_create' %}">KUCH LIKHAIN</a> |
+    <!--<a href="{% url 'logout' %}">Logout</a> |-->
     <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a> 
 {% else %}
-    <a href="{% url 'login' %}"><b>KUCH LIKHAIN</b></a> |
+    <a href="{% url 'login' %}">KUCH LIKHAIN</a> |
     <a href="{% url 'registration_register' %}">Register</a> |
     <a href="{% url 'login' %}">Login</a> 
 {% endif %}</p>

@@ -267,12 +267,11 @@ h2 {
 
 
 .voting {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.5);
     width: 25px;
     border-color: blue;
     border-style: solid;
     color:blue;
-    border-color: blue;
     font-size:100%;
 
 

@@ -12,7 +12,9 @@
 <form method="POST" action="{% url 'vote' %}" class="vote_form">
 	{% csrf_token %}
 	<li> 
-		
+	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
+	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
+	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
 	<a class="countofvotes">{% if link.votes %}
 			{% if link.votes == 1 %}
 				{{ "1 vote" }}
@@ -23,22 +25,22 @@
 		{{ "0 votes" }}
 	{% endif %}	 
 	</a>
-	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
-	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
-	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">
-	{% if not user.is_authenticated %}
-	<button disabled title="LOGIN karien takey vote kar sakien">vote</button>
-	{% elif link.pk not in voted %}	
-	<input class="voting" type="submit" id="id_valup" name="val" value="↑">
-	<input  class="voting" type="submit" id="id_valdown" name="val" value="↓">
-	{% else %}
-	<button>unvote</button>
-	{% endif %}<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}{{ ':' }}</a>
+	{{ link.rank_score }}
+	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
 		<a class="biggerblack">{{ link.description }}</a>
 		 
-		{% if link.url %}
-			<b><a href="{{ link.url }}" target="_blank" class="link">{{ "(link)"}}</a></b>
-		{% endif %} 
+	{% if link.url %}
+		<b><a href="{{ link.url }}" target="_blank" class="link">{{ "(link)"}}</a></b>
+	{% endif %} 
+
+	{% if not user.is_authenticated %}
+		<button disabled title="LOGIN karien takey vote kar sakien">vote</button>
+	{% elif link.pk not in voted %}	
+		<input class="voting" type="submit" id="id_valup" name="val" value="↑">
+		<input  class="voting" type="submit" id="id_valdown" name="val" value="↓">
+	{% else %}
+		<button>unvote</button>
+	{% endif %}
 		<a href="{% url 'link_detail' pk=link.pk %}">
 		{% get_comment_count for link as comment_count %}
 		{{ comment_count }} comment{{ comment_count|pluralize}}</a>
