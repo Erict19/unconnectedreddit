@@ -57,13 +57,13 @@ class Link(models.Model):
         netvotes = self.votes # 'NONE' votes are messing up netvotes amount.
         if netvotes == None:
             netvotes = 0
-        order = log(max(abs(netvotes), 1), 10) #0.041392685 for zero votes
+        order = log(max(abs(netvotes), 1), 10) #0.041392685 for zero votes, log 1 = 0
         sign = 1 if netvotes > 0 else -1 if netvotes < 0 else 0
         unaware_submission = self.submitted_on.replace(tzinfo=None)
         td = unaware_submission - epoch 
         epoch_submission = td.days * 86400 + td.seconds + (float(td.microseconds) / 1000000) #number of seconds from epoch till date of submission
         secs = epoch_submission - 1432201843 #a recent date, coverted to epoch time
-        self.rank_score = round(sign * order + secs / 45000, 7)
+        self.rank_score = round(sign * order + secs / 45000, 8)
         self.save() # this persists the rank_score in the database
         # the score doesn't decay as time goes by, but newer stories get a higher score over time. 
 
