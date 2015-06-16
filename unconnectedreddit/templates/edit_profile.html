@@ -2,12 +2,19 @@
 
 {% block content %}
 <div class="margin">
-<div class="editprofilecontainer">
 <h2>{{ user.username }} ki profile</h2>
 
-<form method="post" action="">
+<form class="editgendermarital" method="post" action="">
   {% csrf_token %}
-  <ul class="editgendermarital"><table><tr><td>{{ form.as_p }}<td><tr></table></ul>
+  <table>
+	{% for field in form %}	  
+  <tr><td>{{ field.errors }}</td></tr>
+  <tr><td>{{ field.label_tag }} </td><td>{{ field }}</td></tr>
+  
+  {% endfor %}
+  </table>
+
+ 
   <input class="button" type="submit" value="Save">
 </form>
 </div>
