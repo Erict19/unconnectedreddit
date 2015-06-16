@@ -7,7 +7,7 @@
 
 <form method="post" action="">
   {% csrf_token %}
-  <ul class="editgendermarital">{{ form.as_p }}</ul>
+  <ul class="editgendermarital"><table><tr><td>{{ form.as_p }}<td><tr></table></ul>
   <input class="button" type="submit" value="Save">
 </form>
 </div>
