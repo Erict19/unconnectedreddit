@@ -256,9 +256,17 @@ header {
 }
 
 .foot {
-    margin-left: auto;
     margin-right: auto;
     text-align: center;
+    width:100%;
+}
+
+.foot2 {
+    width:100%;
+    margin-left: 0.5cm;
+    text-align: center;
+    font-size: 80%;
+    font-weight: lighter;
 }
 
 .navbar {
