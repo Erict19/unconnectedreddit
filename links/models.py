@@ -6,17 +6,6 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 from math import log
 
-
-GENDER = (
-('Aurat','Aurat'),
-('Mard','Mard'),
-    )
-
-STATUS = (
-('No','No'),
-('Yes','Yes'),
-    )
-
 CATEGS = (
 ('1','Funny'),
 ('2','Songs'),
@@ -26,6 +15,7 @@ CATEGS = (
 ('6','Photos'),
 ('7','Ajeeb'),
 ('8','Dosti'),
+('9', 'Khareedna Baichna')
     )
 
 class LinkVoteCountManager(models.Manager): #this class is derived from model manager
@@ -78,10 +68,10 @@ class Vote(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
     bio = models.TextField("Apney baarey mein koi khaas baat batain", default='Ao gupshup lagain...', null=True)
-    mobilenumber = models.CharField("Mobile Number ", null=True, max_length=50) #added mobile number to model, form and __init__
-    gender = models.CharField("aurat ho ya mard?", choices=GENDER, default='Aurat', max_length=25)
+    mobilenumber = models.CharField("Mobile Number ", blank=True, max_length=50) #added mobile number to model, form and __init__
+    gender = models.BooleanField("Aurat ho ya mard?", default=True)
     age = models.PositiveIntegerField("Kitni umr hai?", null=True)
-    status = models.CharField("Shaadi kar li hai?", choices=STATUS, default='No', max_length=25)
+    shadi_shuda = models.BooleanField("Shaadi kar li hai?", default=False)
 
     def __unicode__(self):
         return "%s's profile" % self.user
