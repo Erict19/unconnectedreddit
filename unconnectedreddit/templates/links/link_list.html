@@ -41,10 +41,14 @@
 	{% else %}
 		<button>unvote</button>
 	{% endif %}
+	{% get_comment_count for link as comment_count %}
+	{% if comment_count %}
 		<a href="{% url 'link_detail' pk=link.pk %}">
-		{% get_comment_count for link as comment_count %}
 		{{ comment_count }} comment{{ comment_count|pluralize}}</a>
 		</a>
+	{% else %}
+		<a href="{% url 'link_detail' pk=link.pk %}">comment karien</a>
+	{% endif %}
 	</b></li>
 </form>
 {% endfor %}
@@ -54,5 +58,7 @@
 {% block pagination %}
 
  {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
-
+<p class="foot2">|<a href="{% url 'registration_register' %}"> KUCH LIKHAIN </a>|</p>
 {% endblock %}
+
+
