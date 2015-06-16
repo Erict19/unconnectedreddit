@@ -15,6 +15,14 @@
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
 	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
+	<!--{{ link.rank_score }}-->
+	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
+		<a class="biggerblack">{{ link.description }}</a>
+		 
+	{% if link.url %}
+		<b><a href="{{ link.url }}" target="_blank" class="link">{{ "(link)"}}</a></b>
+	{% endif %} 
+	<p>
 	<a class="countofvotes">{% if link.votes %}
 			{% if link.votes == 1 %}
 				{{ "1 vote" }}
@@ -25,19 +33,11 @@
 		{{ "0 votes" }}
 	{% endif %}	 
 	</a>
-	<!--{{ link.rank_score }}-->
-	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
-		<a class="biggerblack">{{ link.description }}</a>
-		 
-	{% if link.url %}
-		<b><a href="{{ link.url }}" target="_blank" class="link">{{ "(link)"}}</a></b>
-	{% endif %} 
-
 	{% if not user.is_authenticated %}
-		<button disabled title="LOGIN karien takey vote kar sakien">vote</button>
+		<a href="{% url 'registration_register' %}" class="fakebutton">vote</a>
 	{% elif link.pk not in voted %}	
-		<input class="voting" type="submit" id="id_valup" name="val" value="↑">
-		<input  class="voting" type="submit" id="id_valdown" name="val" value="↓">
+		<input class="voting" type="submit" id="id_valup" name="val" style="color:green" value="↑">
+		<input  class="voting" type="submit" id="id_valdown" name="val" style="color:red" value="↓">
 	{% else %}
 		<button>unvote</button>
 	{% endif %}
