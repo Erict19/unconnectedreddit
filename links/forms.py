@@ -16,7 +16,7 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ("user") #so user doesn't show, but the extended attributes of bio and mobile number do show    
-    
+        fields=('bio', 'mobilenumber', 'age', 'gender', 'shadi_shuda')
 
 class LinkForm(forms.ModelForm):
     class Meta:
