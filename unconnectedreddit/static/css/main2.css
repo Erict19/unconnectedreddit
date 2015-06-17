@@ -183,7 +183,9 @@ h2 a {
     display:block;
 }
 
-
+.info{
+    color:black;
+}
 
 
 .btn-warning  {
@@ -293,7 +295,7 @@ h2 {
 
 
 .voting {
-    background-color: rgba(0,0,0,0.5);
+    background-color:#000000;
     width: 25px;
     border-color: blue;
     border-style: solid;
