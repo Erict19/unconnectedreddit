@@ -105,6 +105,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 MOBI_DETECT_TABLET = True
+MOBI_USER_AGENT_IGNORE_LIST = ['ipad', 'android',]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
