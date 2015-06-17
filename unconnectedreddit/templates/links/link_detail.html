@@ -15,7 +15,7 @@
 <div class="desc">
 <p><a href="{% url 'profile' slug=object.submitter %}"><b>{{ object.submitter }}</b></a>: <a class="info">{{ object.description }}</a></p>
 {% if object.url %}
-Link: <a href="{{ object.url }}" target="_blank" class="wrapper">{{ object.url }}</a>
+Link: <a href="{{ object.url }}" target="_blank">{{ object.url }}</a>
 {% endif %}
 
 <div class="comments">
