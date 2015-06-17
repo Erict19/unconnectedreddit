@@ -33,7 +33,7 @@
     <a href="/">Home</a> |
 {% if user.is_authenticated %}
     <a class="sharing" href="{% url 'link_create' %}">KUCH LIKHAIN</a> |
-    <a href="{% url 'logout' %}">Logout</a> |
+    <!--<a href="{% url 'logout' %}">Logout</a> |-->
     <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a> 
 {% else %}
     <a href="{% url 'registration_register' %}">KUCH LIKHAIN</a> |
