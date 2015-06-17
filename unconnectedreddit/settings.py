@@ -11,7 +11,7 @@ ON_HEROKU = os.environ.get('ON_HEROKU')
 #heroku ps:scale web=1 to put in a dyno
 
 if ON_HEROKU == '1':
-    DEBUG=True
+    DEBUG=False
 else:
     DEBUG=True
 
