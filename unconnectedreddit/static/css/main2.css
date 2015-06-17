@@ -118,9 +118,10 @@ h5 {
     font:arial;
     font-weight: lighter;
     width:100%;
-    margin-top:0;
+    margin-top:-20px;
     color:white;
     padding-bottom: 10px;
+    padding-top:0;
   
 }
 .comment{
@@ -214,6 +215,7 @@ h1 {
     font:arial;
     font-weight: 700;
     width:100%;
+    margin-top: -20px;
    
 
 
@@ -546,7 +548,7 @@ h5 {
     font-family: arial;
     font:arial;
     font-weight: lighter;
-  margin-top:0;
+  margin-top:-20px;
     color:white;
     padding-bottom: 10px;
   
@@ -633,6 +635,7 @@ h1 {
     width:120px;
     padding-bottom:0;
     margin-bottom: 0;
+    margin-top: -20px;
 
 
 }
