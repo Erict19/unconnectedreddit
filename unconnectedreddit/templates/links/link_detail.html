@@ -15,7 +15,7 @@
 <div class="desc">
 <p><a href="{% url 'profile' slug=object.submitter %}"><b>{{ object.submitter }}</b></a>: <a class="info">{{ object.description }}</a></p>
 {% if object.url %}
-Link: <a href="{{ object.url }}" target="_blank">{{ object.url }}</a>
+  Link: <a href="{{ object.url }}" target="_blank" style:"word-wrap:break-word">{{ object.url }}</a>
 {% endif %}
 
 <div class="comments">
@@ -41,7 +41,7 @@ Link: <a href="{{ object.url }}" target="_blank">{{ object.url }}</a>
    <h3> <input class="button"  style="width:115px;background-color:#F6F6F6;text-align:center" type="submit" value="Add comment" id="id_submit"></h3>
   </form>
 {% else %}
-  <p><i>Comment karney ke liye <a href="{% url 'registeration_register' %}">register</a> karien.</i></p>
+  <p><i>Comment karney ke liye <a href="{% url 'registration_register' %}">register</a> karien.</i></p>
 {% endif %}
   </div>
   </div>
