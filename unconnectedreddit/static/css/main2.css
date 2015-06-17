@@ -305,6 +305,11 @@ h2 {
 
 }
 
+.wrapping{
+
+    word-wrap: break-word;
+}
+
 a{
     font-size: 100%;
 }
