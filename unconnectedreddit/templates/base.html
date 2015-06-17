@@ -3,7 +3,7 @@
 <head>
   <title>Damadam</title>
     
-    {% if not request.mobile or request.tablet %}
+    {% if not request.mobile or request.tablet %} <!-- i.e. if its a computer-type browser -->
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main2.css">
     {% else %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
@@ -19,10 +19,11 @@
 </head>
 <body>
 
-
-<h1>Damadam</h1>
-
-
+{% if not request.mobile or request.tablet %}
+<h1>Damadam Computer</h1>
+{% else %}
+<h1>Damadam Mobile</h1>
+{% endif %}
 
 <h5>Bindas gupshup aur Internet links!</h5>
 <div class="navbar">

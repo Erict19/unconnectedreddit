@@ -1,21 +1,21 @@
 html{
-    width:120px;
+    width:100%;
     background-color:#FFFFFF;
     font-family: arial;
     height:100%;
     margin-left: 0px;
-    max-width:120px;
+    max-width:100%;
     margin-right:0;
     margin-top:0;
 
 }
 
 body{
-    width:120px;
+    width:100%;
     font-family: arial;
     font: arial;
     margin-left: 0px;
-    max-width:120px;
+    max-width:100%;
     margin-right: 0;
     margin-top:0;
 }
@@ -178,7 +178,7 @@ h1 {
     font-family: arial;
     font:arial;
     font-weight: 700;
-    width:120px;
+    width:100%;
     padding-bottom:0;
     margin-bottom: 0;
 
