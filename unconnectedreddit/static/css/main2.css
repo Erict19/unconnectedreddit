@@ -263,7 +263,7 @@ header {
 
 .foot2 {
     width:100%;
-    margin-left: 0.5cm;
+    margin-left: 0em;
     text-align: center;
     font-size: 80%;
     font-weight: lighter;
@@ -413,6 +413,8 @@ background-image: url(bullet.jpg);
 background-repeat: no-repeat;
 background-position: 0px 50%;
 padding-left: 7px;
+width:100%;
+max-width:401px;
 }
 
 .editgendermarital li {

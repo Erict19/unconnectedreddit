@@ -55,10 +55,11 @@
     </li>
 </ul>
 </div>
-
-  
-  
-  
+{% if user.is_authenticated %}
+| <a class="foot2" href="{% url 'link_create' %}">KUCH LIKHAIN</a> |
+{% else %}
+| <a class="foot2" href="{% url 'registration_register' %}">KUCH LIKHAIN</a> |  
+{% endif %}
 </div>
 </body>
 </html>

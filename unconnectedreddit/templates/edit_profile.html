@@ -6,13 +6,14 @@
 
 <form class="editgendermarital" method="post" action="">
   {% csrf_token %}
-  <table>
+ 
 	{% for field in form %}	  
-  <tr><td>{{ field.errors }}</td></tr>
-  <tr><td>{{ field.label_tag }} </td><th>{{ field }}</th></tr>
+  {{ field.errors }}<p>
+  <div>{{ field.label_tag }}</div>
+  <div>{{ field }}</div>
   
   {% endfor %}
-  </table>
+ 
 
  
   <input class="button" style="background-color:#F6F6F6" type="submit" value="Save">
