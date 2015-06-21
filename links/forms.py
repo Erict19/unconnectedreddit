@@ -2,6 +2,7 @@ from django import forms
 from .models import UserProfile, Link, Vote
 from django.contrib.auth.models import User
 
+
 class UserProfileForm(forms.ModelForm):
     MardAurat = (
     	(1,'Aurat'),
