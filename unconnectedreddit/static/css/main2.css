@@ -333,7 +333,6 @@ a{
 .margin{
     margin-left:20px;
     margin-right:20px;
-
     padding: 10px;
     border-radius:6px;
     padding-top:5px;
@@ -360,7 +359,7 @@ a{
 }
 
 .bigger {
-    font-size:130%;
+    font-size:120%;
 }
 
 .biggerblack {
@@ -409,23 +408,23 @@ a{
 .editgendermarital {
 
     list-style-type: none;
-background-image: url(bullet.jpg);
-background-repeat: no-repeat;
-background-position: 0px 50%;
-padding-left: 7px;
-width:100%;
-max-width:401px;
+    background-image: url(bullet.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px 50%;
+    padding-left: 7px;
+    width:100%;
+    max-width:500px;
 }
 
 .editgendermarital li {
 
-list-style-type: none;
-background-image: url(bullet.jpg);
-background-repeat: no-repeat;
-background-position: 0px 50%;
-padding-left: 7px;
-color:black;
-font-size:15px;
+    list-style-type: none;
+    background-image: url(bullet.jpg);
+    background-repeat: no-repeat;
+    background-position: 0px 50%;
+    padding-left: 7px;
+    color:black;
+    font-size:15px;
 
 }
 
