@@ -10,6 +10,12 @@ ON_HEROKU = os.environ.get('ON_HEROKU')
 #heroku config:set ON_HEROKU=1 
 #heroku ps:scale web=1 to put in a dyno
 
+#git init
+#git remote add origin https://github.com/mhb11/unconnectedredditpk.git
+#git pull origin master
+#git add <files>
+#git push origin master
+
 if ON_HEROKU == '1':
     DEBUG=False
 else:
@@ -20,6 +26,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     ('Hassan Baig', 'baig.hassan@gmail.com'),
     ('Sophie Pervez', 'spz3113@gmail.com'),
+    ('Fahad Rao', 'fahadrao@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -32,7 +39,7 @@ ALLOWED_HOSTS = ['*']
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Oral'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -143,6 +150,8 @@ INSTALLED_APPS = (
     'registration', #found at has@has-VirtualBox:~/.virtualenvs/unconnectedreddit/local/lib/python2.7/site-packages/registration/backends/simple$
     'bootstrap_pagination',
     'djcelery',
+    'tweepy',
+    'django.contrib.humanize',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
