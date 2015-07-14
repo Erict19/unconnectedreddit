@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 class UserProfileForm(forms.ModelForm):
     MardAurat = (
-    	(1,'Aurat'),
-    	(0,'Mard'),
+    	(1,'Mahila'),
+    	(0,'Purush'),
     	)
     MaritalStatus = (
     	(1,'Yes'),
