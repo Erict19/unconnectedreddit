@@ -28,7 +28,7 @@ class Link(models.Model):
     submitter = models.ForeignKey(User) # link.submitter is a user!
     submitted_on = models.DateTimeField(auto_now_add=True)
     rank_score = models.FloatField(default=0.0)
-    url = models.URLField("Link (agr hai)", max_length=250, blank=True)
+    url = models.URLField("Link (agar hai)", max_length=250, blank=True)
     cagtegory = models.CharField(choices=CATEGS, default=1, max_length=25)
     
     with_votes = LinkVoteCountManager() #change this to set_rank()
