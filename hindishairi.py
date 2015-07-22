@@ -11,7 +11,7 @@ auth.set_access_token('19013184-IPGMNzMnTZmg9acmnSrfcMBUPGvHhvzrpA3ZxDhYF', 'HFL
 api = tweepy.API(auth)
 
 #public_tweets = api.home_timeline()
-public_tweet = api.user_timeline(id='TrueShayari', count=1, include_rts=False)
+public_tweet = api.user_timeline(id='beingactress', count=1, include_rts=False)#TrueShayari for hindi shairi
 #public_tweet2 = api.user_timeline(id='baigi', count=1, include_rts=False)
 for tweet in public_tweet:
     retort = tweet.text
