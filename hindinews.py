@@ -11,7 +11,7 @@ auth.set_access_token('19013184-IPGMNzMnTZmg9acmnSrfcMBUPGvHhvzrpA3ZxDhYF', 'HFL
 api = tweepy.API(auth)
 
 #public_tweets = api.home_timeline()
-public_tweet = api.user_timeline(id='indianews', count=1, include_rts=False)#ddnewshindi for hindi news
+public_tweet = api.user_timeline(id='ddnewshindi', count=1, include_rts=False)# indianews for Indian news in English
 #public_tweet2 = api.user_timeline(id='baigi', count=1, include_rts=False)
 for tweet in public_tweet:
     retort = tweet.text
