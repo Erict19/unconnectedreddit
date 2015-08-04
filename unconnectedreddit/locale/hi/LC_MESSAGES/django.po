@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 21:52-0400\n"
+"POT-Creation-Date: 2015-08-03 22:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,6 +36,7 @@ msgid "KUCH LIKHO"
 msgstr "कुछ लिखो"
 
 #: templates/base.html:63 templates/registration/registration_form.html:12
+#: templates/registration/registration_vote_form.html:12
 msgid "Register"
 msgstr "रिजिस्टर"
 
