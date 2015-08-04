@@ -1,8 +1,9 @@
+{% load i18n %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   
-  <title>Damadam</title>
+  <title>{% trans "Damadam" %}</title>
     <!-- ****** faviconit.com favicons ****** -->
     <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     <link rel="icon" sizes="16x16 32x32 64x64" href="{{ STATIC_URL }}img/favicon.ico">
@@ -42,25 +43,25 @@
 <body>
 
 {% if not request.mobile or request.tablet %}
-<h1>Damadam</h1>
+<h1>{% trans "Damadam" %}</h1>
 {{ window.screen.width }}
 {% else %}
-<h1>Damadam</h1>
+<h1>{% trans "Damadam" %}</h1>
 {% endif %}
 
-<h5>Bindas gupshup aur Internet links!</h5>
+<h5>{% trans "Bindas gupshup aur Internet links!" %}</h5>
 <div class="navbar">
 <p>
     <!--<a href="{% url 'home' %}">Home</a> |-->
-    <a href="/">Home</a> |
+    <a href="/">{% trans "Home" %}</a> |
 {% if user.is_authenticated %}
-    <a class="sharing" href="{% url 'link_create' %}">KUCH LIKHO</a> |
+    <a class="sharing" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |
     <!--<a href="{% url 'logout' %}">Logout</a> |-->
     <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a> 
 {% else %}
-    <a href="{% url 'registration_register' %}">KUCH LIKHO</a> |
-    <a href="{% url 'registration_register' %}">Register</a> |
-    <a href="{% url 'login' %}">Login</a> 
+    <a href="{% url 'registration_register' %}">{% trans "KUCH LIKHO" %}</a> |
+    <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> |
+    <a href="{% url 'login' %}">{% trans "Login" %}</a> 
 {% endif %}</p>
 </div>
 <div class="container">
@@ -78,9 +79,9 @@
 </ul>
 </div>
 {% if user.is_authenticated %}
-| <a class="foot2" href="{% url 'link_create' %}">KUCH LIKHO</a> |
+| <a class="foot2" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |
 {% else %}
-| <a class="foot2" href="{% url 'registration_register' %}">KUCH LIKHO</a> |  
+| <a class="foot2" href="{% url 'registration_register' %}">{% trans "KUCH LIKHO" %}</a> |  
 {% endif %}
 </div>
 </body>

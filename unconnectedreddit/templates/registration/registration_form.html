@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block content %}
 <div class="margin">
-<h2>Register karo</h2>
-<p>Register karne se aap likh, vote aur comment kar sakte ho! Agar pehlay register kiya hua hai toh <a href="{% url 'login' %}">login</a> karo.</p>
+<h2>{% trans "Register karo" %}</h2>
+<p>{% trans "Register karne se aap likh, vote aur comment kar sakte ho! Agar pehlay register kiya hua hai toh" %} <a href="{% url 'login' %}">{% trans "login" %}</a> {% trans "karo." %}</p>
 {% if form.errors %}
 {% endif %}
 <form method="post" action="">
   {% csrf_token %}
   {{ form.as_p }}
-  <input class="button" style="background-color:#F6F6F6" type="submit" value="Register">
+  <input class="button" style="background-color:#F6F6F6" type="submit" value="{% trans "Register" %}">
 </form>
 </div>
 {% endblock %}

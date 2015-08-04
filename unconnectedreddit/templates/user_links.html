@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
-<h2>{{ user.username }}'s Profile</h2>
+<h2>{{ user.username }} {% trans "ki Profile" %}</h2>
 {% if user.userprofile.bio %}
 	<div>
-	<b>Bio:</b>
+	<b>{% trans "Bio:" %}</b>
 	{{ user.userprofile.bio }}
 	</div>
 	{% endif %}
@@ -30,6 +31,6 @@
 
 
 {% if object.username == user.username %}
-<p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
+<p><a href='{% url "edit_profile" %}'>{% trans "Change my profile" %}</a></p>
 {% endif %}
 {% endblock %}

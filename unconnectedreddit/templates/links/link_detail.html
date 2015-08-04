@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load tz %}
 {% load comments %}
 {% load humanize %}
@@ -11,8 +12,8 @@
 </style>
 <div class="margin">
 {% if object.submitter == user %}
-  <a style="font-size:10px" href="{% url 'link_update' pk=object.pk %}">Edit <b style="color:black">|</b></a> 
-  <a style="font-size:10px" href="{% url 'link_delete' pk=object.pk %}"> Delete</a>
+  <a style="font-size:10px" href="{% url 'link_update' pk=object.pk %}">{% trans "Edit" %}<b style="color:black">|</b></a> 
+  <a style="font-size:10px" href="{% url 'link_delete' pk=object.pk %}">{% trans "Delete" %}</a>
 {% endif %}
 <div class="desc">
 <p><a href="{% url 'profile' slug=object.submitter %}"><b>{{ object.submitter }}</b></a>: <a class="info">{{ object.description|urlize_target_blank:25 }}</a></p>
@@ -22,7 +23,7 @@
 
 <div class="comments">
 <p style="color:gray"><hr /></p>
-  <h3>Comments:</h3>
+  <h3>{% trans "Comments:" %}</h3>
 
   <div class="comment_form">
 {% if user.is_authenticated %}
@@ -40,10 +41,10 @@
     <input type="hidden" name="url" value="">
     <input type="hidden" name="next" 
      value="{% url 'link_detail' pk=object.id %}">
-   <h3> <input class="button"  style="width:115px;background-color:#F6F6F6;text-align:center" type="submit" value="Add comment" id="id_submit"></h3>
+   <h3> <input class="button"  style="width:115px;background-color:#F6F6F6;text-align:center" type="submit" value="{% trans "Add comment" %}" id="id_submit"></h3>
   </form>
 {% else %}
-  <p><i>Comment karney ke liye <a href="{% url 'registration_register' %}">register</a> karien.</i></p>
+  <p><i>{% trans "Comment karney ke liye" %} <a href="{% url 'registration_register' %}">{% trans "register" %}</a> {% trans "karo." %}</i></p>
 {% endif %}
   </div>
   </div>

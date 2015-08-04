@@ -1,45 +1,46 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
 {{ block.super }}
 <div class=margin>
-<h2>{{ object.username }} ki profile</h2>
+<h2>{{ object.username }} {% trans "ki profile" %}</h2>
 	<div>
-	<b class="profile">About:</b>
+	<b class="profile">{% trans "About:" %}</b>
 	{% if object.userprofile.bio %}
 	<a class="info">{{ object.userprofile.bio }}</a>
 	</div>
 	{% endif %}
 	<div>
-	<b class="profile">Ling:</b>
+	<b class="profile">{% trans "Ling:" %}</b>
 	{% if object.userprofile.gender %}
-		<a class="info">{{ "Mahila" }}</a>
+		<a class="info">{% trans "Mahila" %}</a>
 	{% else %}
-		<a class="info">{{ "Purush" }}</a>	
+		<a class="info">{% trans "Purush" %}</a>	
 	</div>
 	{% endif %}
 	<div>
-	<b class="profile">Mobile Number:</b>
+	<b class="profile">{% trans "Mobile Number:" %}</b>
 	{% if object.userprofile.mobilenumber %}
 	<a class="info">{{ object.userprofile.mobilenumber }}</a>
 	</div>
 	{% endif %}
 	<div>
-	<b class="profile">Age:</b>
+	<b class="profile">{% trans "Age:" %}</b>
 	{% if object.userprofile.age %}
 	<a class="info">{{ object.userprofile.age }}</a>
 	</div>
 	{% endif %}
 	<div>
-	<b class="profile">Shaadi shuda:</b>
+	<b class="profile">{% trans "Shaadi shuda:" %}</b>
 	{% if object.userprofile.shadi_shuda %}
-		<a class="info">{{ "Yes" }}</a>
+		<a class="info">{% trans "Yes" %}</a>
 	{% else %}
-		<a class="info">{{ "No" }}</a>
+		<a class="info">{% trans "No" %}</a>
 	</div>
 	{% endif %}
 
 {% if object.username == user.username %}
-<p><a href='{% url "edit_profile" %}'>Change my profile</a></p>
+<p><a href='{% url "edit_profile" %}'>{% trans "Change my profile" %}</a></p>
 {% endif %}
 </div>
 {% endblock %}

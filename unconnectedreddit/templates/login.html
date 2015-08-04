@@ -1,24 +1,25 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block content %}
 <div class="margin">
-<h2>Login</h2>
-<p>Agar pehlay kabhi login nahi kiya tou <a href="{% url 'registration_register' %}">register</a> karo.</p>
+<h2>{% trans "Login" %}</h2>
+<p>{% trans "Agar pehlay kabhi login nahi kiya toh" %}<a href="{% url 'registration_register' %}">{% trans " register" %}</a> {% trans "karo." %}</p>
 {% if form.errors %}
-<p>Nickname aur password wohi honay chahiye jin se register kiya tha. Bhool gaye ho tou doobara register karo.</p>
+<p>{% trans "Nickname aur password wohi honay chahiye jin se pehlay register kiya tha. Bhool gaye ho toh" %}<a href="{% url 'registration_register' %}">{% trans "doobara register" %}</a> {% trans "karo." %}</p>
 {% endif %}
 
 <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
   {% csrf_token %}
+
   
-    <p>{{ 'Nickname:' }}
+    <p>{% trans "Nickname:" %}
       {{ form.username }}</p>
   
-    <p>  {{ 'Password:' }}
+    <p>{% trans "Password:" %}
       {{ form.password }}</p>
    
   
-  <input class="button" style="background-color:#F6F6F6" type="submit" value="Login">
+  <input class="button" style="background-color:#F6F6F6" type="submit" value="{% trans "Login" %}">
   <input type="hidden" name="next" value="{{ next }}">
 </form>
 </div>
