@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <baig.hassan@gmail.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-01 21:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: forms.py:8
+msgid "Mahila"
+msgstr "महिला"
+
+#: forms.py:9
+msgid "Purush"
+msgstr "पुरुष"
+
+#: forms.py:12
+msgid "Yes"
+msgstr "हाँ"
+
+#: forms.py:13
+msgid "No"
+msgstr "नही"
+
+#: models.py:11
+msgid "Funny"
+msgstr "चुटकुले"
+
+#: models.py:12
+msgid "Songs"
+msgstr "गाने"
+
+#: models.py:13
+msgid "Gupshup"
+msgstr "मंन की बात"
+
+#: models.py:14
+msgid "Videos"
+msgstr "फिल्में"
+
+#: models.py:15
+msgid "Cricket"
+msgstr "क्रिकेट"
+
+#: models.py:16
+msgid "Photos"
+msgstr "तस्वीरें"
+
+#: models.py:17
+msgid "Ajeeb"
+msgstr "अनोखा"
+
+#: models.py:18
+msgid "Dosti"
+msgstr "दोस्ती"
+
+#: models.py:19
+msgid "Khareedna Baichna"
+msgstr "खरीदने और बेचने"
+
+#: models.py:28
+msgid "Kuch likho"
+msgstr "कुछ लिखो"
+
+#: models.py:32
+msgid "Link (agar hai)"
+msgstr "लिंक (अगर हैं)"
+
+#: models.py:71
+msgid "Apney baarey mein kuch khaas baat batao"
+msgstr "अपने बारे मैं कुछ ख़ास बात बताओ"
+
+#: models.py:71
+msgid "Main apni favorite hoon..."
+msgstr "मैं अपनी  फेवरीत हूँ ..."
+
+#: models.py:72
+msgid "Mobile number "
+msgstr "मोबाइल नंबर "
+
+#: models.py:73
+msgid "Mahila ya purush?"
+msgstr "महिला या पुरुष?"
+
+#: models.py:74
+msgid "Kitni umar hai?"
+msgstr "कितनी उमर हैं?"
+
+#: models.py:75
+msgid "Shaadi kar li hai?"
+msgstr "क्या आप शादीशुदा हैं?"

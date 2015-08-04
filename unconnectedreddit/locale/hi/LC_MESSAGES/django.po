@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <baig.hassan@gmail.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 21:52-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:6 templates/base.html.py:46 templates/base.html:49
+msgid "Damadam"
+msgstr "दमादम"
+
+#: templates/base.html:52
+msgid "Bindas gupshup aur Internet links!"
+msgstr "बिंदास गपशप और इंटरनेट लिंक्स"
+
+#: templates/base.html:56
+msgid "Home"
+msgstr "होम"
+
+#: templates/base.html:58 templates/base.html.py:62 templates/base.html:82
+#: templates/base.html.py:84
+msgid "KUCH LIKHO"
+msgstr "कुछ लिखो"
+
+#: templates/base.html:63 templates/registration/registration_form.html:12
+msgid "Register"
+msgstr "रिजिस्टर"
+
+#: templates/base.html:64 templates/login.html:5 templates/login.html.py:22
+#: templates/registration/login.html:19
+msgid "Login"
+msgstr "लॉग इन"
+
+#: templates/edit_profile.html:5 templates/user_detail.html:6
+msgid "ki profile"
+msgstr "की प्रोफाइल"
+
+#: templates/edit_profile.html:17
+msgid "Ling"
+msgstr "लिंग"
+
+#: templates/edit_profile.html:19
+msgid "Shaadi shuda"
+msgstr "विवाहित"
+
+#: templates/edit_profile.html:20
+msgid "Save"
+msgstr "इसको पक्का करो"
+
+#: templates/login.html:6
+msgid "Agar pehlay kabhi login nahi kiya toh"
+msgstr "अगर पहले कभी नही लॉग इन किया तो"
+
+#: templates/login.html:6 templates/registration/login.html:8
+msgid " register"
+msgstr " रिजिस्टर"
+
+#: templates/login.html:6 templates/login.html.py:8
+#: templates/links/link_detail.html:47 templates/registration/login.html:8
+#: templates/registration/registration_form.html:6
+#: templates/registration/registration_vote_form.html:6
+msgid "karo."
+msgstr "करो"
+
+#: templates/login.html:8
+msgid ""
+"Nickname aur password wohi honay chahiye jin se pehlay register kiya tha. "
+"Bhool gaye ho toh"
+msgstr "नाम और पासवर्ड वोही होना चाहिए जिन से पहले रिजिस्टर किया था| भूल गये हो तो"
+
+#: templates/login.html:8
+#, fuzzy
+msgid "doobara register"
+msgstr "दोबारा रिजिस्टर"
+
+#: templates/login.html:15 templates/registration/login.html:13
+msgid "Nickname:"
+msgstr "मुंह बोला नाम :"
+
+#: templates/login.html:18 templates/registration/login.html:16
+msgid "Password:"
+msgstr "पासवर्ड :"
+
+#: templates/user_detail.html:8
+msgid "About:"
+msgstr "मेरी ख़ास बात :"
+
+#: templates/user_detail.html:14
+msgid "Ling:"
+msgstr "लिंग :"
+
+#: templates/user_detail.html:16
+msgid "Mahila"
+msgstr "महिला"
+
+#: templates/user_detail.html:18
+msgid "Purush"
+msgstr "पुरुष"
+
+#: templates/user_detail.html:22
+msgid "Mobile Number:"
+msgstr "मोबाइल नंबर :"
+
+#: templates/user_detail.html:28
+msgid "Age:"
+msgstr "आयु :"
+
+#: templates/user_detail.html:34
+msgid "Shaadi shuda:"
+msgstr "विवाहित :"
+
+#: templates/user_detail.html:36
+msgid "Yes"
+msgstr "हाँ"
+
+#: templates/user_detail.html:38
+msgid "No"
+msgstr "नही"
+
+#: templates/user_detail.html:43 templates/user_links.html:34
+msgid "Change my profile"
+msgstr "प्रोफाइल बदलो"
+
+#: templates/user_links.html:4
+msgid "ki Profile"
+msgstr "की प्रोफाइल"
+
+#: templates/user_links.html:7
+msgid "Bio:"
+msgstr "मेरी ख़ास बात :"
+
+#: templates/links/link_confirm_delete.html:5
+msgid "Kiya isko mita doon:"
+msgstr "क्या मैं इसको मिटा दू :"
+
+#: templates/links/link_confirm_delete.html:9
+msgid "Nahi Mitao"
+msgstr "नही मिटाओ"
+
+#: templates/links/link_detail.html:15
+msgid "Edit"
+msgstr "इसको बदलो "
+
+#: templates/links/link_detail.html:16
+msgid "Delete"
+msgstr "इसको मिटाओ"
+
+#: templates/links/link_detail.html:26
+msgid "Comments:"
+msgstr "कॉमेंट :"
+
+#: templates/links/link_detail.html:44
+msgid "Add comment"
+msgstr "लिख लिया"
+
+#: templates/links/link_detail.html:47
+msgid "Comment karney ke liye"
+msgstr "कॉमेंट करने के लिए"
+
+#: templates/links/link_detail.html:47
+msgid "register"
+msgstr "रिजिस्टर"
+
+#: templates/links/link_form.html:5
+msgid "Kuch Likho!"
+msgstr "कुछ लिखो"
+
+#: templates/links/link_form.html:6
+msgid "Jokes, stories, dil ki baat, mazay mazay ke links, sab chalta hai!"
+msgstr "चुटकुले, कहानियों, मंन की बात, मज़े मज़े के लिंक्स, सब चलता हैं!"
+
+#: templates/links/link_form.html:10
+msgid "Add"
+msgstr "लिख लिया"
+
+#: templates/links/link_form.html:12
+msgid ""
+"Aap jo likhogey, usko 'Home' pe aaney mai shayid 2-3 min lag jain. Chinta "
+"mat karna"
+msgstr "आप जो लिखोगे उसको होम पे आने मैं शायड 2-3 मिनिट लग जाए| चिंता मत करना"
+
+#: templates/links/link_list.html:29 templates/links/link_list.html.py:69
+msgid "1 vote"
+msgstr "1 वोट"
+
+#: templates/links/link_list.html:31 templates/links/link_list.html.py:71
+msgid "votes"
+msgstr "वोट"
+
+#: templates/links/link_list.html:34 templates/links/link_list.html.py:74
+msgid "0 votes"
+msgstr "0 वोट"
+
+#: templates/links/link_list.html:38
+msgid "vote"
+msgstr "वोट करो"
+
+#: templates/links/link_list.html:43
+msgid "unvote"
+msgstr "वोट वापिस लो"
+
+#: templates/links/link_list.html:51
+msgid "comment"
+msgstr "कॉमेंट"
+
+#: templates/links/link_list.html:51
+msgid "comments"
+msgstr "कॉमेंट"
+
+#: templates/links/link_list.html:54
+msgid "comment karo"
+msgstr "कॉमेंट करो"
+
+#: templates/registration/login.html:5
+msgid ""
+"Nickname aur password wohi honay chahiye jin se pehlay register kiya tha!"
+msgstr "नाम और पासवर्ड वोही होना चाहिए जिन से पहले रिजिस्टर किया था!"
+
+#: templates/registration/login.html:8
+msgid "Bhool gaye ho toh doobara"
+msgstr "भूल गये हो तो दोबारा"
+
+# msgid "%('Nickname:')s"
+# msgstr "%('मुंह बोला नाम :')s"
+# msgid "%('Password:')s"
+# msgstr "%('पासवर्ड :')s"
+#: templates/registration/registration_form.html:5
+#: templates/registration/registration_vote_form.html:5
+msgid "Register karo"
+msgstr "रिजिस्टर करो"
+
+#: templates/registration/registration_form.html:6
+#: templates/registration/registration_vote_form.html:6
+msgid ""
+"Register karne se aap likh, vote aur comment kar sakte ho! Agar pehlay "
+"register kiya hua hai toh"
+msgstr ""
+"रिजिस्टर करने से आप लिख, वोट और कॉमेंट कर सकते हो! अगर पहले रिजिस्टर किया हो तो"
+
+#: templates/registration/registration_form.html:6
+#: templates/registration/registration_vote_form.html:6
+msgid "login"
+msgstr "लॉग इन"
+
+#~ msgid "Shaadi Shuda"
+#~ msgstr "विवाहित"
