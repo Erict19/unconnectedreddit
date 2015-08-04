@@ -5,17 +5,18 @@ from django.core.urlresolvers import reverse
 from django.utils import timezone
 from datetime import datetime, timedelta
 from math import log
+from django.utils.translation import ugettext as _
 
 CATEGS = (
-('1','Funny'),
-('2','Songs'),
-('3','Gupshup'),
-('4','Videos'),
-('5','Cricket'),
-('6','Photos'),
-('7','Ajeeb'),
-('8','Dosti'),
-('9', 'Khareedna Baichna')
+('1',_('Funny')),
+('2',_('Songs')),
+('3',_('Gupshup')),
+('4',_('Videos')),
+('5',_('Cricket')),
+('6',_('Photos')),
+('7',_('Ajeeb')),
+('8',_('Dosti')),
+('9',_('Khareedna Baichna'))
     )
 
 class LinkVoteCountManager(models.Manager): #this class is derived from model manager
@@ -24,11 +25,11 @@ class LinkVoteCountManager(models.Manager): #this class is derived from model ma
              #using a parent-class function here, over-riding query_set to include count field
 # annotate allows annotating the results of any query_set with some aggregate function like sum, count, average
 class Link(models.Model):
-    description = models.TextField("Kuch likho")#, max_length=500)
+    description = models.TextField(_("Kuch likho"))#, max_length=500)
     submitter = models.ForeignKey(User) # link.submitter is a user!
     submitted_on = models.DateTimeField(auto_now_add=True)
     rank_score = models.FloatField(default=0.0)
-    url = models.URLField("Link (agar hai)", max_length=250, blank=True)
+    url = models.URLField(_("Link (agar hai)"), max_length=250, blank=True)
     cagtegory = models.CharField(choices=CATEGS, default=1, max_length=25)
     
     with_votes = LinkVoteCountManager() #change this to set_rank()
@@ -67,11 +68,11 @@ class Vote(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
-    bio = models.TextField("Apney baarey mein kuch khaas baat batao", default='Ao gupshup karte hain...', null=True)
-    mobilenumber = models.CharField("Mobile number ", blank=True, max_length=50) #added mobile number to model, form and __init__
-    gender = models.BooleanField("Mahila ya purush?", default=True)
-    age = models.PositiveIntegerField("Kitni umar hai?", null=True)
-    shadi_shuda = models.BooleanField("Shaadi kar li hai?", default=False)
+    bio = models.TextField(_("Apney baarey mein kuch khaas baat batao"), default=_("Main apni favorite hoon..."), null=True)
+    mobilenumber = models.CharField(_("Mobile number "), blank=True, max_length=50) #added mobile number to model, form and __init__
+    gender = models.BooleanField(_("Mahila ya purush?"), default=True)
+    age = models.PositiveIntegerField(_("Kitni umar hai?"), null=True)
+    shadi_shuda = models.BooleanField(_("Shaadi kar li hai?"), default=False)
     previous_retort = models.CharField(blank=True, max_length=500)
 
     def __unicode__(self):

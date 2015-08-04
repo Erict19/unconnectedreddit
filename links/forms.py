@@ -1,16 +1,16 @@
 from django import forms
 from .models import UserProfile, Link, Vote
 from django.contrib.auth.models import User
-
+from django.utils.translation import ugettext as _
 
 class UserProfileForm(forms.ModelForm):
     MardAurat = (
-    	(1,'Mahila'),
-    	(0,'Purush'),
+    	(1,_('Mahila')),
+    	(0,_('Purush')),
     	)
     MaritalStatus = (
-    	(1,'Yes'),
-    	(0,'No'),
+    	(1,_('Yes')),
+    	(0,_('No')),
     	)
     gender = forms.TypedChoiceField(choices=MardAurat, widget=forms.RadioSelect, coerce=int)
     shadi_shuda = forms.TypedChoiceField(choices=MaritalStatus, widget=forms.RadioSelect, coerce=int)
