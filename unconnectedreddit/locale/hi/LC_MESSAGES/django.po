@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 22:02-0400\n"
+"POT-Creation-Date: 2015-08-04 00:08-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgid "Nahi Mitao"
 msgstr "नही मिटाओ"
 
 #: templates/links/link_detail.html:15
-msgid "Edit"
+msgid "Edit "
 msgstr "इसको बदलो "
 
 #: templates/links/link_detail.html:16
