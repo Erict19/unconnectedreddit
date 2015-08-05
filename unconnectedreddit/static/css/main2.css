@@ -366,7 +366,7 @@ a{
 }
 
 .button{   
-    width: 90px;
+    width: auto;
     margin-top:1%;
     color:blue;
     border-color: blue;
