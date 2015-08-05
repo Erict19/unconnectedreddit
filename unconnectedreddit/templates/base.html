@@ -41,13 +41,28 @@
         <meta name="author" content="">
 </head>
 <body>
-
+<div class="language" style="text-align:center;">
+<nav id="language_chooser">
+    <ul>
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <input name="language" type="hidden" value="{{ language.code }}">
+                <button type="submit">{% if language.name == 'Hindi' %}हिन्दी{% else %}English{% endif %}</button>
+            </form>
+        {% endfor %}
+    </ul>
+</nav>
+</div>
 {% if not request.mobile or request.tablet %}
 <h1>{% trans "Damadam" %}</h1>
 {{ window.screen.width }}
 {% else %}
 <h1>{% trans "Damadam" %}</h1>
 {% endif %}
+<!-- -->
 
 <h5>{% trans "Bindas gupshup aur Internet links!" %}</h5>
 <div class="navbar">
