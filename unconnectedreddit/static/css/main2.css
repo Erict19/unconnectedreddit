@@ -176,6 +176,7 @@ i{
 }
 
 #language_chooser button {
+    -webkit-appearance: button;
     border: none;
     color: blue;
     background-color: white;
