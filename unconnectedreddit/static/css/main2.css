@@ -118,8 +118,8 @@ h5 {
     width:100%;
     margin-top:-22px;
     color:white;
-    padding-bottom: 10px;
-    padding-top:1px;
+    padding-bottom: 7px;
+    padding-top:3px;
   
 }
 .comment{
@@ -180,10 +180,11 @@ i{
     color: blue;
     background-color: white;
     border-radius: 0.3em;
-    margin: 0.5%;
-    width:3.5%;
-    margin-left:-1%;
-    margin-right: 1.5%;
+    margin: 5px;
+    width:4em;
+    height: 1.3em;
+    margin-left:-18px;
+    margin-right: 20px;
 }
 
 .language {
@@ -230,7 +231,7 @@ h2 a {
 h1 {
  
     background-color: rgb(51,151,248);
-    padding-top:10px; 
+    padding-top:3px; 
     text-align:center;
     font-size: 200%;
     color: white;
