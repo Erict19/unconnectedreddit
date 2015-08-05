@@ -1,8 +1,13 @@
 # Django settings for unconnectedreddit project.
+from django.utils.translation import ugettext_lazy as _
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 print "CHECKING_HEROKU!"
 ON_HEROKU = os.environ.get('ON_HEROKU')
@@ -43,7 +48,14 @@ TIME_ZONE = 'Asia/Oral'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ('hi', _('Hindi')), 
+    ('en', _('English')),
+)
+
+LANGUAGE_CODE = 'hi'
 
 SITE_ID = 1
 
@@ -101,8 +113,9 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -120,8 +133,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
-    #"django.contrib.messages.context_processors.messages",
+    "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.request",
+    "django.core.context_processors.tz",
     )
 
 ROOT_URLCONF = 'unconnectedreddit.urls'
