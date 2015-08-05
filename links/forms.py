@@ -1,7 +1,7 @@
 from django import forms
 from .models import UserProfile, Link, Vote
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 class UserProfileForm(forms.ModelForm):
     MardAurat = (

@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.utils import timezone
 from datetime import datetime, timedelta
 from math import log
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 CATEGS = (
 ('1',_('Funny')),

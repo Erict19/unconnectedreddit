@@ -8,7 +8,7 @@ from .forms import UserProfileForm, LinkForm, VoteForm
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpRequest
-#from django.utils.translation import ugettext as _
+#from django.utils.translation import ugettext_lazy as _
 #from registration.backends.simple.views import RegistrationView
 
 #class MyRegistrationView(RegistrationView):
