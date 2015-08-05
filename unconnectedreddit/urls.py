@@ -1,11 +1,11 @@
 from django.conf.urls import patterns, include, url
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required as auth
 from django.contrib import admin
 from links.models import UserProfile, Vote
 from django.views.generic.base import TemplateView
-
 from links.views import LinkListView, UserProfileDetailView, UserProfileEditView, LinkCreateView, LinkDetailView, LinkUpdateView, LinkDeleteView, VoteFormView #MyRegistrationView
-
+#from django.conf.urls.i18n import i18n_patterns
 
 admin.autodiscover()
 
@@ -27,5 +27,7 @@ urlpatterns = patterns('',
     url(r'^link/delete/(?P<pk>\d+)/$', auth(LinkDeleteView.as_view()), name='link_delete'),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^vote/$', auth(VoteFormView.as_view()), name="vote"),
+    #url(r'^i18n/', include('django.conf.urls.i18n')),
+    url('^i18n/setlang/', 'django.views.i18n.set_language', name='set_language'),
 
 )
