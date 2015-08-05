@@ -170,7 +170,7 @@ i{
 }
 
 #language_chooser form {
-    display: inline;
+    display: inline-table;
     background: rgb(51,151,248);
     font-size: 70%;
 }
