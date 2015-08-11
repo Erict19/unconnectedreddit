@@ -51,9 +51,6 @@ body{
 }
 
 
-
-
-
 a {
  
     color: #00399C;
@@ -172,7 +169,7 @@ i{
 #language_chooser form {
     display: inline-table;
     background: rgb(51,151,248);
-    font-size: 70%;
+    font-size: 60%;
 }
 
 #language_chooser button {
