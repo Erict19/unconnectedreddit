@@ -47,8 +47,6 @@
 	{% else %}
 		<button style="background-color:#F6F6F6">{% trans "unvote" %}</button>	
 	{% endif %}
-	<!--<input class="smsbutton" type="submit" name="sms" style="color:blue;background-color:#F6F6F6" value="sms">-->
-	<!--<button>sms</button>-->
 	<a href="sms:+91234?body={{ link.description|add:" ||Aur dekho MUFT main www.damadam.in par"|urlencode }}" style="color:blue;background-color:#FFBC79">SMS</a>
 	{% get_comment_count for link as comment_count %}
 	{% if comment_count %}
@@ -66,5 +64,5 @@
 
 {% block pagination %}
 
-{% bootstrap_paginate page_obj range=10 url_param_name="hello" show_prev_next="false" show_first_last="true" %}
+{% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
 {% endblock %}
