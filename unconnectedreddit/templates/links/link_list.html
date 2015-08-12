@@ -21,7 +21,7 @@
 	<!--{{ link.rank_score }}-->
 	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
 	<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
-	<a name="section{{ forloop.counter }}">''</a>	 
+	<a name="section{{ forloop.counter }}"></a>	 
 	{% if link.url %}
 		<b><span style="font-size:121%; font-weight:100;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
