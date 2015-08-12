@@ -64,13 +64,3 @@
 
  {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
 {% endblock %}
-
-<a class="countofvotes">{% if link.votes %}
-			{% if link.votes == 1 %}
-				{% trans "1 vote" %}
-			{% else %}
-				{{ link.votes }} {% trans "votes" %}
-		{% endif %}
-	{% else %}
-		{% trans "0 votes" %}
-	{% endif %}	 
