@@ -83,7 +83,7 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
         user = self.request.user
         if self.request.method == 'POST':
             btn = self.request.POST.get("val")
-            page = self.request.POST.get("page_number")
+            section = self.request.POST.get("section_number")
         if btn == u"\u2191":
             val = 1
         elif btn == u"\u2193":
@@ -99,7 +99,7 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
             # delete vote
             prev_votes[0].delete() #if user has previously voted, simply delete previous vote
         #if page==1:
-        return redirect(self.request.META.get('HTTP_REFERER'))
+        return redirect(self.request.META.get('HTTP_REFERER')+"#section"+section)
         #else:
         #    return redirect(self.request.META.get('HTTP_REFERER')+"?page="+page)
 

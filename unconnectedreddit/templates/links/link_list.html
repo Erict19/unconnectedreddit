@@ -17,16 +17,16 @@
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
 	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
-	<input type="hidden" id="id_page" name="page_number" value="{{ page_obj.number }}">
+	<input type="hidden" id="id_page" name="section_number" value="{{ forloop.counter }}">
 	<!--{{ link.rank_score }}-->
 	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
-		<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
-		 
+	<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
+	<a name="section{{ forloop.counter }}">''</a>	 
 	{% if link.url %}
 		<b><span style="font-size:121%; font-weight:100;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
 	<p style="margin-top:0.25em">
-	<a class="countofvotes" name="section{{ forloop.counter }}">
+	<a class="countofvotes">
 		{% if link.votes %}
 				{% if link.votes == 1 %}
 					{% trans "1 vote" %}
