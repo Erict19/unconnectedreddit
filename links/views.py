@@ -98,10 +98,10 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
         else:
             # delete vote
             prev_votes[0].delete() #if user has previously voted, simply delete previous vote
-        if page==1:
-            return redirect(self.request.META.get('HTTP_REFERER'))
-        else:
-            return redirect(self.request.META.get('HTTP_REFERER')+"?page="+page)
+        #if page==1:
+        return redirect(self.request.META.get('HTTP_REFERER'))
+        #else:
+        #    return redirect(self.request.META.get('HTTP_REFERER')+"?page="+page)
 
     def form_invalid(self, form): #this function is also always to be defined for views created for forms
         return redirect("home")
