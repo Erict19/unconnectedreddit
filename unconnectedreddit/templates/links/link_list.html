@@ -4,7 +4,7 @@
 {% load bootstrap_pagination %}
 {% load urlize_target_blank %}
 {% block content %}
-page number = {{ page_obj.number }}
+<!--page number = {{ page_obj.number }}-->
 {% if is_paginated %}
 <ol start="{{ page_obj.start_index }}">
 {% else %}
@@ -17,6 +17,7 @@ page number = {{ page_obj.number }}
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
 	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
+	<input type="hidden" id="id_page" name="page_number" value="{{ page_obj.number }}">
 	<!--{{ link.rank_score }}-->
 	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
 		<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
