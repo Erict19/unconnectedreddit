@@ -65,6 +65,6 @@
 {% endblock %}
 
 {% block pagination %}
-<a href="#section0">
-{% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}</a>
+
+{% bootstrap_paginate page_obj url_name="hello" range=10 show_prev_next="false" show_first_last="true" %}
 {% endblock %}
