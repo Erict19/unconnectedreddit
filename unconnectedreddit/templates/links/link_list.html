@@ -5,6 +5,7 @@
 {% load urlize_target_blank %}
 {% block content %}
 <!--page number = {{ page_obj.number }}-->
+<a name="section0"></a>
 {% if is_paginated %}
 <ol start="{{ page_obj.start_index }}">
 {% else %}
@@ -22,6 +23,7 @@
 	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
 	<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
 	<a name="section{{ forloop.counter }}"></a>	 
+	
 	{% if link.url %}
 		<b><span style="font-size:121%; font-weight:100;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
@@ -62,7 +64,7 @@
 </ol>
 {% endblock %}
 
-{% block pagination %}
+<a href="#section0">{% block pagination %}
 
- {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
-{% endblock %}
+{% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
+{% endblock %}</a>
