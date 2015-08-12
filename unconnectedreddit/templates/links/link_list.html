@@ -38,13 +38,13 @@
 		<a href="{% url 'registration_register' %}" class="fakebutton" style="background-color:#F6F6F6">{% trans "vote" %}</a>
 	{% elif link.pk not in voted %}	
 		<a name="section{{ forloop.counter }}">
-			<input class="voting" type="submit" id="id_valup" name="val" style="color:green;background-color:#F6F6F6;font-weight:bold" value="↑"></a>
+			<input class="voting" type="submit" id="id_valup" name="val" style="color:green;background-color:#F6F6F6;font-weight:bold" value="↑">
 			<input  class="voting" type="submit" id="id_valdown" name="val" style="color:red;background-color:#F6F6F6;font-weight:bold" value="↓">
-		
+		</a>
 	{% else %}
-		
+		<a name="section{{ forloop.counter }}">
 			<button style="background-color:#F6F6F6">{% trans "unvote" %}</button>
-			
+		</a>	
 	{% endif %}
 	<!--<input class="smsbutton" type="submit" name="sms" style="color:blue;background-color:#F6F6F6" value="sms">-->
 	<!--<button>sms</button>-->
