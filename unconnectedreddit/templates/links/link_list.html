@@ -4,36 +4,49 @@
 {% load bootstrap_pagination %}
 {% load urlize_target_blank %}
 {% block content %}
-<!--page number = {{ page_obj.number }}-->
+
 <a name="section0"></a>
 {% if is_paginated %}
-<ol start="{{ page_obj.start_index }}">
+<ul start="{{ page_obj.start_index }}" class="zebra">
 {% else %}
-<ol>
+<ul class="zebra">
 {% endif %}
 {% for link in object_list %}
+<li class="zebra"> 
 <form method="POST" action="{% url 'vote' %}" class="vote_form">
 	{% csrf_token %}
-	<li> 
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
 	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
-	<input type="hidden" id="id_page" name="section_number" value="{{ forloop.counter }}">
+	<input type="hidden" id="id_page" name="rank" value="{{ forloop.counter }}">
 	<!--{{ link.rank_score }}-->
-	<a href="{% url 'profile' slug=link.submitter %}" class="bigger">{{ link.submitter }}:</a>
-	<span style="color:black; font-size:121%;">{{ link.description|urlize_target_blank:25 }}</span>
-	<a name="section{{ forloop.counter }}"></a>	 
+	<span class="numbers">
+    <b>
+    {% if not page_obj.number|add:"-1" %}
+    	{{ forloop.counter }}.
+    {% else %}
+    	{% if forloop.counter == 10 %}
+    		{{ page_obj.number }}0.
+    	{% else %}	
+    		{{ page_obj.number|add:"-1" }}{{ forloop.counter }}.
+    	{% endif %}
+    {% endif %}
+    </b>
+    </span>
+	<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1; display:inline;">{{ link.submitter }}:</a>
+    <span style="color:black; font-size:125%; font-family:'Noto Sans', arial; line-height:1;">{{ link.description|urlize_target_blank:25 }}</span>
+	<a name="section{{ forloop.counter }}"></a> 	 
 	
 	{% if link.url %}
-		<b><span style="font-size:121%; font-weight:100;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
+		<b><span style="font-size:121%; font-weight:100; font-family:'Noto Sans', arial; line-height:1;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
-	<p style="margin-top:0.25em">
+	<p style="margin-top:0.6em">
 	<a class="countofvotes">
 		{% if link.votes %}
 				{% if link.votes == 1 %}
 					{% trans "1 vote" %}
 				{% else %}
-					{{ link.votes }} {% trans "votes" %}
+					{{ link.votes }} {% trans " votes" %}
 			{% endif %}
 		{% else %}
 			{% trans "0 votes" %}
@@ -56,10 +69,11 @@
 	{% else %}
 		<a href="{% url 'link_detail' pk=link.pk %}">{% trans "comment karo" %}</a>
 	{% endif %}
-	</b></li>
+	</p>
 </form>
+</li>
 {% endfor %}
-</ol>
+</ul>
 {% endblock %}
 
 {% block pagination %}

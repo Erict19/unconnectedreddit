@@ -50,6 +50,32 @@ body{
 
 }
 
+ul.zebra {
+width:99%;
+margin:18px;
+padding:0px;
+}
+
+ li:nth-child(even).zebra {
+  background-color: rgba(0,0,0,0.1);
+
+  list-style-type: none;
+
+}
+
+ li:nth-child(odd).zebra {
+  background-color: white;
+
+  list-style-type: none;
+  
+}
+
+.numbers {
+
+    font-size: 80%;
+    padding-right: 10px;
+    color:gray;
+}
 
 a {
  
