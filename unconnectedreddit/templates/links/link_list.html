@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load comments %}
-{% load bootstrap_pagination %}
+<!--{% load bootstrap_pagination %}-->
 {% load urlize_target_blank %}
 {% block content %}
 
@@ -76,7 +76,19 @@
 </ul>
 {% endblock %}
 
+
 {% block pagination %}
 
-{% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
+{% if is_paginated %}
+<div class="pagination">
+	{% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><b>&leftarrow;</b>{% trans "pichla panna" %}</a>
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">{% trans "agla panna" %}<b>&rightarrow;</b></a>
+    {% endif %}
+</div>
+{% endif %}
+<!--{% bootstrap_paginate page_obj range=5 show_prev_next="true" previous_label="Pichla" next_label="Agla" show_first_last="false" %}-->
 {% endblock %}

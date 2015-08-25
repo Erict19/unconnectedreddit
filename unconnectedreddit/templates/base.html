@@ -32,7 +32,7 @@
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main2.css">
     {% endif %}    
     
-
+        <link href='http://fonts.googleapis.com/css?family=Noto+Sans&subset=devanagari,latin' rel='stylesheet' type='text/css'>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <!-- <meta charset="utf-8"> THIS IS AN HTML5 TAG-->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,6 +93,7 @@
     </li>
 </ul>
 </div>
+
 {% if user.is_authenticated %}
 | <a class="foot2" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |
 {% else %}
