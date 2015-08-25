@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-05 00:08-0400\n"
+"POT-Creation-Date: 2015-08-25 06:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,18 @@ msgstr "हाँ"
 #: forms.py:13
 msgid "No"
 msgstr "नही"
+
+#: forms.py:16
+msgid "Ekdum kadak yaar"
+msgstr "एकदम कड़क यार"
+
+#: forms.py:17
+msgid "Itni burri bhi nahi"
+msgstr "इतनी बुरी भी नही"
+
+#: forms.py:18
+msgid "Shakal pe mat ja"
+msgstr "शकल पे मत जा"
 
 #: models.py:11
 msgid "Funny"
@@ -70,25 +82,21 @@ msgstr "दोस्ती"
 msgid "Khareedna Baichna"
 msgstr "खरीदने और बेचने"
 
-#: models.py:28
+#: models.py:29
 msgid "Kuch likho"
 msgstr "कुछ लिखो"
 
-#: models.py:32
+#: models.py:33
 msgid "Link (agar hai)"
 msgstr "लिंक (अगर हैं)"
 
-#: models.py:71
+#: models.py:72
 msgid "Apney baarey mein kuch khaas baat batao"
 msgstr "अपने बारे मैं कुछ ख़ास बात बताओ"
 
-#: models.py:71
+#: models.py:72
 msgid "Main apni favorite hoon..."
 msgstr "मैं अपनी  फेवरीत हूँ ..."
-
-#: models.py:72
-msgid "Mobile number "
-msgstr "मोबाइल नंबर "
 
 #: models.py:73
 msgid "Mahila ya purush?"
@@ -101,3 +109,15 @@ msgstr "कितनी उमर हैं?"
 #: models.py:75
 msgid "Shaadi kar li hai?"
 msgstr "क्या आप शादीशुदा हैं?"
+
+#: models.py:77
+msgid "Shakal soorat"
+msgstr "शकल सूरत"
+
+#: models.py:78
+msgid "Mobile number"
+msgstr "मोबाइल नंबर "
+
+#: models.py:79
+msgid "Score"
+msgstr "स्कोर"

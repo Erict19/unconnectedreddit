@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 04:20-0400\n"
+"POT-Creation-Date: 2015-08-25 06:39-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,8 @@ msgstr "बिंदास गपशप और इंटरनेट लिं�
 msgid "Home"
 msgstr "होम"
 
-#: templates/base.html:73 templates/base.html.py:77 templates/base.html:97
-#: templates/base.html.py:99
+#: templates/base.html:73 templates/base.html.py:77 templates/base.html:98
+#: templates/base.html.py:100
 msgid "KUCH LIKHO"
 msgstr "कुछ लिखो"
 
@@ -57,15 +57,23 @@ msgstr "लॉग इन"
 msgid "ki profile"
 msgstr "की प्रोफाइल"
 
-#: templates/edit_profile.html:17
+#: templates/edit_profile.html:11
+msgid "Aap ka mobile number kisi aur ko nahi dikhaya jaye ga"
+msgstr "आप का मोबाइल नंबर किसी और को नही दिखाया जाएगा"
+
+#: templates/edit_profile.html:18
 msgid "Ling"
 msgstr "लिंग"
 
-#: templates/edit_profile.html:19
+#: templates/edit_profile.html:20
 msgid "Shaadi shuda"
 msgstr "विवाहित"
 
-#: templates/edit_profile.html:20
+#: templates/edit_profile.html:22
+msgid "Shakal soorat"
+msgstr "शकल सूरत"
+
+#: templates/edit_profile.html:23
 msgid "Save"
 msgstr "इसको पक्का करो"
 
@@ -91,7 +99,6 @@ msgid ""
 msgstr "नाम और पासवर्ड वोही होना चाहिए जिन से पहले रिजिस्टर किया था| भूल गये हो तो"
 
 #: templates/login.html:8
-#, fuzzy
 msgid "doobara register"
 msgstr "दोबारा रिजिस्टर"
 
@@ -104,42 +111,62 @@ msgid "Password:"
 msgstr "पासवर्ड :"
 
 #: templates/user_detail.html:8
+msgid "Score:"
+msgstr "स्कोर:"
+
+#: templates/user_detail.html:10
+msgid "Kuch likho toh +5, ↑ milay toh +10, ↓ milay toh -10"
+msgstr ""
+
+#: templates/user_detail.html:13
 msgid "About:"
 msgstr "मेरी ख़ास बात :"
 
-#: templates/user_detail.html:14
-msgid "Ling:"
-msgstr "लिंग :"
-
-#: templates/user_detail.html:16
-msgid "Mahila"
-msgstr "महिला"
-
-#: templates/user_detail.html:18
-msgid "Purush"
-msgstr "पुरुष"
-
-#: templates/user_detail.html:22
-msgid "Mobile Number:"
-msgstr "मोबाइल नंबर :"
-
-#: templates/user_detail.html:28
+#: templates/user_detail.html:19
 msgid "Age:"
 msgstr "आयु :"
 
-#: templates/user_detail.html:34
+#: templates/user_detail.html:25
+msgid "Ling:"
+msgstr "लिंग :"
+
+#: templates/user_detail.html:27
+msgid "Mahila"
+msgstr "महिला"
+
+#: templates/user_detail.html:29
+msgid "Purush"
+msgstr "पुरुष"
+
+#: templates/user_detail.html:33
 msgid "Shaadi shuda:"
 msgstr "विवाहित :"
 
-#: templates/user_detail.html:36
+#: templates/user_detail.html:35
 msgid "Yes"
 msgstr "हाँ"
 
-#: templates/user_detail.html:38
+#: templates/user_detail.html:37
 msgid "No"
 msgstr "नही"
 
-#: templates/user_detail.html:43 templates/user_links.html:34
+#: templates/user_detail.html:41
+msgid "Shakal soorat:"
+msgstr "शकल सूरत:"
+
+#: templates/user_detail.html:44
+msgid "Itni burri bhi nahi"
+msgstr "इतनी बुरी भी नही"
+
+#: templates/user_detail.html:46
+msgid "Shakal pe mat ja"
+msgstr "शकल पे मत जा"
+
+#: templates/user_detail.html:49
+msgid "Ekdum kadak yaar"
+msgstr "एकदम कड़क यार"
+
+#: templates/user_detail.html:53 templates/user_links.html:34
 msgid "Change my profile"
 msgstr "प्रोफाइल बदलो"
 
@@ -205,37 +232,45 @@ msgid ""
 "mat karna"
 msgstr "आप जो लिखोगे उसको होम पे आने मैं शायड 2-3 मिनिट लग जाए| चिंता मत करना"
 
-#: templates/links/link_list.html:29 templates/links/link_list.html.py:69
+#: templates/links/link_list.html:47
 msgid "1 vote"
 msgstr "1 वोट"
 
-#: templates/links/link_list.html:31 templates/links/link_list.html.py:71
-msgid "votes"
-msgstr "वोट"
+#: templates/links/link_list.html:49
+msgid " votes"
+msgstr " वोट"
 
-#: templates/links/link_list.html:34 templates/links/link_list.html.py:74
+#: templates/links/link_list.html:52
 msgid "0 votes"
 msgstr "0 वोट"
 
-#: templates/links/link_list.html:38
+#: templates/links/link_list.html:56
 msgid "vote"
 msgstr "वोट करो"
 
-#: templates/links/link_list.html:43
+#: templates/links/link_list.html:61
 msgid "unvote"
 msgstr "वोट वापिस लो"
 
-#: templates/links/link_list.html:51
+#: templates/links/link_list.html:67
 msgid "comment"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:51
+#: templates/links/link_list.html:67
 msgid "comments"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:54
+#: templates/links/link_list.html:70
 msgid "comment karo"
 msgstr "कॉमेंट करो"
+
+#: templates/links/link_list.html:85
+msgid "pichla panna"
+msgstr "पिछला पन्ना"
+
+#: templates/links/link_list.html:89
+msgid "agla panna"
+msgstr "अगला पन्ना"
 
 #: templates/registration/login.html:5
 msgid ""
@@ -267,6 +302,12 @@ msgstr ""
 #: templates/registration/registration_vote_form.html:6
 msgid "login"
 msgstr "लॉग इन"
+
+#~ msgid "votes"
+#~ msgstr "वोट"
+
+#~ msgid "Mobile Number:"
+#~ msgstr "मोबाइल नंबर :"
 
 #~ msgid "Shaadi Shuda"
 #~ msgstr "विवाहित"
