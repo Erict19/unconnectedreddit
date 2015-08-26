@@ -79,7 +79,7 @@ class LinkCreateView(CreateView):
             f.submitter.userprofile.score = f.submitter.userprofile.score + 5 #adding 5 points every time a user submits new content
         else:
             print "IS NOT AUTHENTICATED"
-            f.submitter = User(id=4) # set this ID to unregistered_bhoot
+            f.submitter = User(id=9) # set this ID to unregistered_bhoot
             f.submitter.userprofile.score = f.submitter.userprofile.score + 0
         f.with_votes = 0
         f.category = '1'
