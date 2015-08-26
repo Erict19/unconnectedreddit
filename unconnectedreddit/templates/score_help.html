@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<span class="score">
+<blockquote>
+<h3>{% trans "Score kaise badhta hai" %}:</h3>
+&bullet; {% trans "Kuch likho gay toh score" %} <b style="color:green;">+5</b> {% trans "ho jaye ga" %}<br>
+&bullet; {% trans "Aap ne jo likha hai, agar usay" %} <b style="color:green;">↑</b> {% trans "vote milay toh score" %} <b style="color:green;">+10</b> {% trans "ho jaye ga" %}<br>
+&bullet; {% trans "Aap ne jo likha hai, agar usay" %} <b style="color:red;">↓</b> {% trans "vote milay toh score" %} <b style="color:red;">-10</b> {% trans "ho jaye ga" %}
+</blockquote>
+</span>
+{% endblock %}
