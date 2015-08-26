@@ -75,9 +75,9 @@
     {% if user.userprofile.score %}
         <a href="{% url 'profile' slug=user.username %}" style="text-shadow:0 0 0.1px blue;">{{ user.username }}</a>
         {% if user.userprofile.score > 0 %}
-            <span style="color:green;font-size:90%;" style="text-shadow:0 0 0.1px #2FC12F;">({{ user.userprofile.score }})</span>
+            <span style="color:green;font-size:90%;text-shadow:0 0 0.1px #2FC12F;">({{ user.userprofile.score }})</span>
         {% else %}
-            <span style="color:red;font-size:90%;" style="text-shadow:0 0 0.1px #2FC12F;">({{ user.userprofile.score }})</span>
+            <span style="color:red;font-size:90%;text-shadow:0 0 0.1px #2FC12F;">({{ user.userprofile.score }})</span>
         {% endif %}
     {% else %}
         <a href="{% url 'profile' slug=user.username %}" style="text-shadow:0 0 0.1px blue;">{{ user.username }}</a>
