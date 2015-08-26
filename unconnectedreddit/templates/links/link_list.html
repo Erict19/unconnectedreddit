@@ -58,8 +58,8 @@
 	{% if not user.is_authenticated %}
 		<a href="{% url 'registration_register' %}" class="fakebutton" style="background-color:#335CD6">{% trans "vote" %}</a>
 	{% elif link.pk not in voted %}	
-		<input class="voting" type="submit" id="id_valup" name="val" style="color:white;background-color:#2FC12F;font-weight:bold;border:none;" value="↑">
-		<input  class="voting" type="submit" id="id_valdown" name="val" style="color:white;background-color:#FF0000;font-weight:bold;border:none;" value="↓">
+		<input class="voting" type="submit" id="id_valup" name="val" style="color:white;background-color:#2FC12F;font-weight:bold;border:none;text-shadow:0 0 0.1px white;" value="↑">
+		<input  class="voting" type="submit" id="id_valdown" name="val" style="color:white;background-color:#FF0000;font-weight:bold;border:none;text-shadow:0 0 0.1px white;" value="↓">
 	{% else %}
 		<button style="background-color:white;color:#1947D1;box-shadow: 0 0 0.2px #335CD6;border-radius:3px;">{% trans "unvote" %}</button>	
 	{% endif %}
