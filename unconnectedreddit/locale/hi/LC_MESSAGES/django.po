@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-25 06:39-0400\n"
+"POT-Creation-Date: 2015-08-25 10:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,63 +110,80 @@ msgstr "मुंह बोला नाम :"
 msgid "Password:"
 msgstr "पासवर्ड :"
 
+#: templates/score_help.html:6
+msgid "Score kaise badhta hai"
+msgstr "स्कोर कैसे बढ़ता हैं"
+
+#: templates/score_help.html:7
+msgid "Kuch likho gay toh score"
+msgstr "कुछ लिखोगे तो स्कोर"
+
+#: templates/score_help.html:7 templates/score_help.html.py:8
+#: templates/score_help.html:9
+msgid "ho jaye ga"
+msgstr "हो जाएगा"
+
+#: templates/score_help.html:8 templates/score_help.html.py:9
+msgid "Aap ne jo likha hai, agar usay"
+msgstr "आप ने जो लिखा हैं, उससे"
+
+#: templates/score_help.html:8 templates/score_help.html.py:9
+msgid "vote milay toh score"
+msgstr "वोट मिले तो स्कोर"
+
 #: templates/user_detail.html:8
 msgid "Score:"
 msgstr "स्कोर:"
 
-#: templates/user_detail.html:10
-msgid "Kuch likho toh +5, ↑ milay toh +10, ↓ milay toh -10"
-msgstr ""
-
-#: templates/user_detail.html:13
+#: templates/user_detail.html:12
 msgid "About:"
 msgstr "मेरी ख़ास बात :"
 
-#: templates/user_detail.html:19
+#: templates/user_detail.html:18
 msgid "Age:"
 msgstr "आयु :"
 
-#: templates/user_detail.html:25
+#: templates/user_detail.html:24
 msgid "Ling:"
 msgstr "लिंग :"
 
-#: templates/user_detail.html:27
+#: templates/user_detail.html:26
 msgid "Mahila"
 msgstr "महिला"
 
-#: templates/user_detail.html:29
+#: templates/user_detail.html:28
 msgid "Purush"
 msgstr "पुरुष"
 
-#: templates/user_detail.html:33
+#: templates/user_detail.html:32
 msgid "Shaadi shuda:"
 msgstr "विवाहित :"
 
-#: templates/user_detail.html:35
+#: templates/user_detail.html:34
 msgid "Yes"
 msgstr "हाँ"
 
-#: templates/user_detail.html:37
+#: templates/user_detail.html:36
 msgid "No"
 msgstr "नही"
 
-#: templates/user_detail.html:41
+#: templates/user_detail.html:40
 msgid "Shakal soorat:"
 msgstr "शकल सूरत:"
 
-#: templates/user_detail.html:44
+#: templates/user_detail.html:43
 msgid "Itni burri bhi nahi"
 msgstr "इतनी बुरी भी नही"
 
-#: templates/user_detail.html:46
+#: templates/user_detail.html:45
 msgid "Shakal pe mat ja"
 msgstr "शकल पे मत जा"
 
-#: templates/user_detail.html:49
+#: templates/user_detail.html:48
 msgid "Ekdum kadak yaar"
 msgstr "एकदम कड़क यार"
 
-#: templates/user_detail.html:53 templates/user_links.html:34
+#: templates/user_detail.html:52 templates/user_links.html:34
 msgid "Change my profile"
 msgstr "प्रोफाइल बदलो"
 
