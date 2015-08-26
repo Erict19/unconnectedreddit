@@ -19,6 +19,7 @@ CATEGS = (
 ('9',_('Khareedna Baichna'))
     )
 
+
 class LinkVoteCountManager(models.Manager): #this class is derived from model manager
     def get_query_set(self): #all we're doing here is over-riding get_query_set. 
         return super(LinkVoteCountManager, self).get_query_set().annotate(votes=Sum('vote__value')).order_by('-rank_score', '-votes')
@@ -69,11 +70,13 @@ class Vote(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True)
     bio = models.TextField(_("Apney baarey mein kuch khaas baat batao"), default=_("Main apni favorite hoon..."), null=True)
-    mobilenumber = models.CharField(_("Mobile number "), blank=True, max_length=50) #added mobile number to model, form and __init__
-    gender = models.BooleanField(_("Mahila ya purush?"), default=True)
+    gender = models.CharField(_("Mahila ya purush?"), max_length=10, default=1)
     age = models.PositiveIntegerField(_("Kitni umar hai?"), null=True)
-    shadi_shuda = models.BooleanField(_("Shaadi kar li hai?"), default=False)
+    shadi_shuda = models.CharField(_("Shaadi kar li hai?"), max_length=10, default=0)
     previous_retort = models.CharField(blank=True, max_length=500)
+    attractiveness = models.CharField(_("Shakal soorat"), max_length=50, default=1)
+    mobilenumber = models.CharField(_("Mobile number"), max_length=15)
+    score = models.IntegerField(_("Score"), default=0)
 
     def __unicode__(self):
         return "%s's profile" % self.user
