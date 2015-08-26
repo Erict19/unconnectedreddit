@@ -57,25 +57,34 @@
 </nav>
 </div>
 {% if not request.mobile or request.tablet %}
-<h1>{% trans "Damadam" %}</h1>
+<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>
 {{ window.screen.width }}
 {% else %}
-<h1>{% trans "Damadam" %}</h1>
+<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>
 {% endif %}
 <!-- -->
 
-<h5>{% trans "Bindas gupshup aur Internet links!" %}</h5>
-<div class="navbar">
+<h5 style="text-shadow:0 0 0.1px white;">{% trans "Bindas gupshup aur Internet links!" %}</h5>
+<div class="navbar"><a name="section0"></a>
 <p>
     <!--<a href="{% url 'home' %}">Home</a> |-->
-    <a href="/">{% trans "Home" %}</a> |
+    <a href="/">{% trans "Home" %}</a>  <span style="color:white;">|</span>
 {% if user.is_authenticated %}
-    <a class="sharing" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |
+    <a class="sharing" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> <span style="color:white;">|</span>
     <!--<a href="{% url 'logout' %}">Logout</a> |-->
-    <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a> 
+    {% if user.userprofile.score %}
+        <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a>
+        {% if user.userprofile.score > 0 %}
+            <span style="color:green;font-size:90%;">({{ user.userprofile.score }})</span>
+        {% else %}
+            <span style="color:red;font-size:90%;">({{ user.userprofile.score }})</span>
+        {% endif %}
+    {% else %}
+        <a href="{% url 'profile' slug=user.username %}">{{ user.username }}</a>
+    {% endif %}
 {% else %}
-    <a href="{% url 'registration_register' %}">{% trans "KUCH LIKHO" %}</a> |
-    <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> |
+    <a href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> <span style="color:white;">|</span>
+    <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> <span style="color:white;">|</span>
     <a href="{% url 'login' %}">{% trans "Login" %}</a> 
 {% endif %}</p>
 </div>
@@ -97,7 +106,7 @@
 {% if user.is_authenticated %}
 | <a class="foot2" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |
 {% else %}
-| <a class="foot2" href="{% url 'registration_register' %}">{% trans "KUCH LIKHO" %}</a> |  
+| <a class="foot2" href="{% url 'link_create' %}">{% trans "KUCH LIKHO" %}</a> |  
 {% endif %}
 </div>
 </body>
