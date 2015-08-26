@@ -5,7 +5,6 @@
 {% load urlize_target_blank %}
 {% block content %}
 
-<a name="section0"></a>
 {% if is_paginated %}
 <ul start="{{ page_obj.start_index }}" class="zebra">
 {% else %}
@@ -33,7 +32,11 @@
     {% endif %}
     </b>
     </span>
-	<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1; display:inline;">{{ link.submitter }}:</a>
+    {% if link.submitter.username == 'unregistered_bhoot' %}
+    	<span class="bigger" style="color:#666666;">unregistered_bhoot:</span>
+    {% else %}
+		<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1; display:inline;text-shadow:0 0 0.1px blue;">{{ link.submitter }}:</a>
+    {% endif %}
     <span style="color:black; font-size:125%; font-family:'Noto Sans', arial; line-height:1;">{{ link.description|urlize_target_blank:25 }}</span>
 	<a name="section{{ forloop.counter }}"></a> 	 
 	
@@ -53,21 +56,21 @@
 		{% endif %}	 
 	</a>
 	{% if not user.is_authenticated %}
-		<a href="{% url 'registration_register' %}" class="fakebutton" style="background-color:#F6F6F6">{% trans "vote" %}</a>
+		<a href="{% url 'registration_register' %}" class="fakebutton" style="background-color:#335CD6">{% trans "vote" %}</a>
 	{% elif link.pk not in voted %}	
-		<input class="voting" type="submit" id="id_valup" name="val" style="color:green;background-color:#F6F6F6;font-weight:bold" value="↑">
-		<input  class="voting" type="submit" id="id_valdown" name="val" style="color:red;background-color:#F6F6F6;font-weight:bold" value="↓">
+		<input class="voting" type="submit" id="id_valup" name="val" style="color:white;background-color:#2FC12F;font-weight:bold;border:none;" value="↑">
+		<input  class="voting" type="submit" id="id_valdown" name="val" style="color:white;background-color:#FF0000;font-weight:bold;border:none;" value="↓">
 	{% else %}
-		<button style="background-color:#F6F6F6">{% trans "unvote" %}</button>	
+		<button style="background-color:white;color:#1947D1;box-shadow: 0 0 0.2px #335CD6;border-radius:3px;">{% trans "unvote" %}</button>	
 	{% endif %}
-	<a href="sms:+91234?body={{ link.description|add:" ||Aur dekho MUFT main www.damadam.in par"|urlencode }}" style="color:blue;background-color:#FFBC79">SMS</a>
+	<a href="sms:+91234?body={{ link.description|add:" ||Aur dekho MUFT main www.damadam.in par"|urlencode }}" class="sms">SMS</a>
 	{% get_comment_count for link as comment_count %}
 	{% if comment_count %}
-		<a href="{% url 'link_detail' pk=link.pk %}">
+		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;cursor: pointer;">
 		{{ comment_count }} {% if comment_count == 1 %}{% trans "comment" %}{% else %} {% trans "comments" %}{% endif %}
 		</a>
 	{% else %}
-		<a href="{% url 'link_detail' pk=link.pk %}">{% trans "comment karo" %}</a>
+		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;cursor: pointer;">{% trans "comment karo" %}</a>
 	{% endif %}
 	</p>
 </form>
@@ -82,11 +85,11 @@
 {% if is_paginated %}
 <div class="pagination">
 	{% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}"><b>&leftarrow;</b>{% trans "pichla panna" %}</a>
+    <a href="?page={{ page_obj.previous_page_number }}#section0"><b  style="color:red;">&leftarrow;</b>{% trans "pichla panna" %}</a>
     {% endif %}
     &nbsp;&nbsp;&nbsp;&nbsp;
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">{% trans "agla panna" %}<b>&rightarrow;</b></a>
+    <a href="?page={{ page_obj.next_page_number }}#section0">{% trans "agla panna" %}<b style="color:green;">&rightarrow;</b></a>
     {% endif %}
 </div>
 {% endif %}
