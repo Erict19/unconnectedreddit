@@ -85,11 +85,11 @@
 {% if is_paginated %}
 <div class="pagination">
 	{% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}#section0"><b  style="color:red;">&leftarrow;</b>{% trans "pichla panna" %}</a>
+    <a href="?page={{ page_obj.previous_page_number }}#section0"><b  style="color:red;text-shadow:0 0 0.1px red;">&leftarrow;</b>{% trans "pichla panna" %}</a>
     {% endif %}
     &nbsp;&nbsp;&nbsp;&nbsp;
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}#section0">{% trans "agla panna" %}<b style="color:green;">&rightarrow;</b></a>
+    <a href="?page={{ page_obj.next_page_number }}#section0">{% trans "agla panna" %}<b style="color:green;text-shadow:0 0 0.1px green;">&rightarrow;</b></a>
     {% endif %}
 </div>
 {% endif %}
