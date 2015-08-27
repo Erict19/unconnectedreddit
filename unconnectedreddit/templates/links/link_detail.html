@@ -57,11 +57,10 @@
   {% for comment in comment_list reversed %}
   <p>
   <div class="comment">
-  <a href="{% url 'profile' slug=comment.user_name %}">{{ comment.user_name }}</a>
-    {{ ':' }}
-    <a class="info">{{ comment.comment }}</a>
+  <a href="{% url 'profile' slug=comment.user_name %}" style="font-family:'Noto Sans', arial; line-height:1.2;text-shadow:0 0 0.1px #8080FF;">{{ comment.user_name }}</a>:
+    <a class="info" style="font-family:'Noto Sans', arial; line-height:1.2;text-shadow:0 0 0.1px #808080;">{{ comment.comment }}</a>
     </div>
-   <div class="date">
+   <div class="date" style="font-family:'Noto Sans', arial; line-height:1.2;text-shadow:0 0 0.1px #B4B4B4;">
    {{ comment.submit_date|naturaltime }}
    </div>
    </p>
