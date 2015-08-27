@@ -35,13 +35,13 @@
     {% if link.submitter.username == 'unregistered_bhoot' %}
     	<span class="bigger" style="color:#666666;">unregistered_bhoot:</span>
     {% else %}
-		<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1; display:inline;text-shadow:0 0 0.1px blue;">{{ link.submitter }}:</a>
+		<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1; display:inline;text-shadow:0 0 0.1px #8080FF;">{{ link.submitter }}:</a>
     {% endif %}
     <span style="color:black; font-size:125%; font-family:'Noto Sans', arial; line-height:1;text-shadow:0 0 0.1px #808080;">{{ link.description|urlize_target_blank:25 }}</span>
 	<a name="section{{ forloop.counter }}"></a> 	 
 	
 	{% if link.url %}
-		<b><span style="font-size:121%; font-weight:100; font-family:'Noto Sans', arial; line-height:1;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
+		<b><span style="font-size:121%; font-weight:100; font-family:'Noto Sans', arial; line-height:1;text-shadow:0 0 0.1px #8080FF;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
 	<p style="margin-top:0.8em">
 	<a class="countofvotes">
