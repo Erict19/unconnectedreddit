@@ -66,11 +66,11 @@
 	<a href="sms:+91234?body={{ link.description|add:" ||Aur dekho MUFT main www.damadam.in par"|urlencode }}" class="sms">SMS</a>
 	{% get_comment_count for link as comment_count %}
 	{% if comment_count %}
-		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;text-shadow:0 0 0.1px #0033CC;cursor: pointer;">
+		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;text-shadow:0 0 0.1px #8099E6;cursor: pointer;">
 		{{ comment_count }} {% if comment_count == 1 %}{% trans "comment" %}{% else %} {% trans "comments" %}{% endif %}
 		</a>
 	{% else %}
-		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;text-shadow:0 0 0.1px #0033CC;cursor: pointer;">{% trans "comment karo" %}</a>
+		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;text-shadow:0 0 0.1px #8099E6;cursor: pointer;">{% trans "comment karo" %}</a>
 	{% endif %}
 	</p>
 </form>
