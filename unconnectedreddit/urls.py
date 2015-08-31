@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required as auth
 from django.contrib import admin
 from links.models import UserProfile, Vote
 from django.views.generic.base import TemplateView
-from links.views import LinkListView, UserProfileDetailView, UserProfileEditView, LinkCreateView, LinkDetailView, LinkUpdateView, LinkDeleteView, VoteFormView, ScoreHelpView #MyRegistrationView
+from links.views import LinkListView, UserProfileDetailView, UserProfileEditView, LinkCreateView, LinkDetailView, LinkUpdateView, LinkDeleteView, VoteFormView, ScoreHelpView, UserSettingsEditView #MyRegistrationView
 #from django.conf.urls.i18n import i18n_patterns
 
 admin.autodiscover()
@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 	url(r'^accounts/', include('registration.backends.simple.urls')),
 	url(r'^users/(?P<slug>\w+)/$', UserProfileDetailView.as_view(), name="profile"),
 	url(r'^edit_profile/$', auth(UserProfileEditView.as_view()), name="edit_profile"),
+	url(r'^edit_settings/$', auth(UserSettingsEditView.as_view()), name="edit_settings"),
 	url(r'^link/create/$', LinkCreateView.as_view(), name='link_create'),
 	url(r'^link/(?P<pk>\d+)/$', LinkDetailView.as_view(), name='link_detail'),
 	url(r'^score/$', auth(ScoreHelpView.as_view()), name='score_help'),

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-25 06:38-0400\n"
+"POT-Creation-Date: 2015-08-31 08:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr "महिला"
 msgid "Purush"
 msgstr "पुरुष"
 
-#: forms.py:12
+#: forms.py:12 forms.py:31
 msgid "Yes"
 msgstr "हाँ"
 
-#: forms.py:13
+#: forms.py:13 forms.py:30
 msgid "No"
 msgstr "नही"
 
@@ -47,16 +47,16 @@ msgid "Shakal pe mat ja"
 msgstr "शकल पे मत जा"
 
 #: models.py:11
-msgid "Funny"
-msgstr "चुटकुले"
+msgid "Gupshup"
+msgstr "मंन की बात"
 
 #: models.py:12
 msgid "Songs"
 msgstr "गाने"
 
 #: models.py:13
-msgid "Gupshup"
-msgstr "मंन की बात"
+msgid "Funny"
+msgstr "चुटकुले"
 
 #: models.py:14
 msgid "Videos"
@@ -82,42 +82,66 @@ msgstr "दोस्ती"
 msgid "Khareedna Baichna"
 msgstr "खरीदने और बेचने"
 
-#: models.py:29
+#: models.py:33
 msgid "Kuch likho"
 msgstr "कुछ लिखो"
 
-#: models.py:33
+#: models.py:37
 msgid "Link (agar hai)"
 msgstr "लिंक (अगर हैं)"
 
-#: models.py:72
+#: models.py:38
+msgid "Category"
+msgstr ""
+
+#: models.py:77
 msgid "Apney baarey mein kuch khaas baat batao"
 msgstr "अपने बारे मैं कुछ ख़ास बात बताओ"
 
-#: models.py:72
+#: models.py:77
 msgid "Main apni favorite hoon..."
 msgstr "मैं अपनी  फेवरीत हूँ ..."
 
-#: models.py:73
+#: models.py:78
 msgid "Mahila ya purush?"
 msgstr "महिला या पुरुष?"
 
-#: models.py:74
+#: models.py:79
 msgid "Kitni umar hai?"
 msgstr "कितनी उमर हैं?"
 
-#: models.py:75
+#: models.py:80
 msgid "Shaadi kar li hai?"
 msgstr "क्या आप शादीशुदा हैं?"
 
-#: models.py:77
+#: models.py:82
 msgid "Shakal soorat"
 msgstr "शकल सूरत"
 
-#: models.py:78
+#: models.py:83
 msgid "Mobile number"
 msgstr "मोबाइल नंबर "
 
-#: models.py:79
+#: models.py:84
 msgid "Score"
 msgstr "स्कोर"
+
+#: models.py:95
+msgid "Sab ka score dikhao"
+msgstr "सब का स्कोर दिखाओ"
+
+#: models.py:96
+msgid "Setting2"
+msgstr ""
+
+#: models.py:97
+msgid "Setting3"
+msgstr ""
+
+#: models.py:98
+msgid "Setting4"
+msgstr ""
+
+#: models.py:99
+msgid "Setting5"
+msgstr ""
