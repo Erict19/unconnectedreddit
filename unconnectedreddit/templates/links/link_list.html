@@ -18,7 +18,7 @@
 	<input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}">
 	<input type="hidden" id="id_value" name="value" class="hidden_id" value="1">		
 	<input type="hidden" id="id_page" name="section_number" value="{{ forloop.counter }}">
-	<!--{{ link.rank_score }}-->
+	<!--{{ link.rank_score|floatformat:10 }}-->
 	<span class="numbers">
     <b>
     {% if not page_obj.number|add:"-1" %}
@@ -35,7 +35,20 @@
     {% if link.submitter.username == 'unregistered_bhoot' %}
     	<span class="bigger" style="color:#666666;">unregistered_bhoot:</span>
     {% else %}
-		<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1.3; display:inline;text-shadow:0 0 0.1px #8080FF;">{{ link.submitter }}:</a>
+		<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1.3; display:inline;text-shadow:0 0 0.1px #8080FF;">{{ link.submitter }}</a>
+		{% if user.is_authenticated %}
+			{% if user.usersettings.score_setting == '1' %}
+				{% if link.submitter.userprofile.score %}
+					{% if link.submitter.userprofile.score < 0%}
+			    	<span style="color:red;">({{ link.submitter.userprofile.score }})</span>
+			    	{% else %}
+			    	<span style="color:#18A018;">({{ link.submitter.userprofile.score }})</span>
+					{% endif %}
+		    	{% else %}
+		    	{% endif %}
+		    {% else %}
+		    {% endif %}
+	    {% endif %}<b>:</b>
     {% endif %}
     <span style="color:black; font-size:125%; font-family:'Noto Sans', arial; line-height:1.3;text-shadow:0 0 0.1px #808080;">{{ link.description|urlize_target_blank:25 }}</span>
 	<a name="section{{ forloop.counter }}"></a> 	 
