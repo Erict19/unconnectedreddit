@@ -1,14 +1,17 @@
 # Create your views here.
 import re
-from .models import Link, Vote, UserProfile
+from .models import Link, Vote, UserProfile, UserSettings
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.views.generic.edit import UpdateView, CreateView, DeleteView, FormView
-from .forms import UserProfileForm, LinkForm, VoteForm, ScoreHelpForm
+from .forms import UserProfileForm, LinkForm, VoteForm, ScoreHelpForm, UserSettingsForm
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpRequest
+from math import log
+from datetime import datetime, timedelta
+from django.utils import timezone
 #from django.utils.translation import ugettext_lazy as _
 #from registration.backends.simple.views import RegistrationView
 
@@ -24,9 +27,12 @@ class LinkDetailView(DetailView):
 
 class LinkListView(ListView):
     model = Link
-    queryset = Link.with_votes.all() #by default, query_set was equal to: Link.objects.all(). We're overriding that to call "with_votes defined in models.py"
+    queryset = Link.with_votes.all() #by default, query_set was equal to: Link.objects.all(). We're overriding that to call "with_votes" defined in models.py
     paginate_by = 10
-    
+    #print queryset[5].votes
+    #print queryset[2].votes
+    #print queryset[3].votes
+
     def get_context_data(self, **kwargs):
         context = super(LinkListView, self).get_context_data(**kwargs)
         if self.request.user.is_authenticated():
@@ -55,15 +61,36 @@ class UserProfileDetailView(DetailView):
         UserProfile.objects.get_or_create(user=user)
         return user
 
+class UserSettingDetailView(DetailView):
+    model = get_user_model()
+    slug_field = "username"
+    template_name = "user_detail.html"
+
+    def get_object(self, queryset=None):
+        user = super(UserSettingDetailView, self).get_object(queryset)
+        UserSettings.objects.get_or_create(user=user)
+        return user
+
 class UserProfileEditView(UpdateView):
     model = UserProfile
     form_class = UserProfileForm
     template_name = "edit_profile.html"
 
-    def get_object(self, queryset=None):
+    def get_object(self, queryset=None): #loading the current state of profile
         return UserProfile.objects.get_or_create(user=self.request.user)[0]
 
-    def get_success_url(self):
+    def get_success_url(self): #which URL to go back once profile edits are saved?
+        return reverse("profile", kwargs={'slug': self.request.user})
+
+class UserSettingsEditView(UpdateView):
+    model = UserSettings
+    form_class = UserSettingsForm
+    template_name = "edit_settings.html"
+
+    def get_object(self, queryset=None): #loading the current state of settings
+        return UserSettings.objects.get_or_create(user=self.request.user)[0]
+
+    def get_success_url(self): #which URL to go back once settings are saved?
         return reverse("profile", kwargs={'slug': self.request.user})
 
 class LinkCreateView(CreateView):
@@ -72,17 +99,24 @@ class LinkCreateView(CreateView):
 
     def form_valid(self, form): #this processes the form before it gets saved to the database
         f = form.save(commit=False) #getting form object, and telling database not to save (commit) it just yet
-        f.rank_score = 0.0
+        #Setting rank score
+        #f.rank_score=0
+        epoch = datetime(1970, 1, 1).replace(tzinfo=None)
+        unaware_submission = datetime.now().replace(tzinfo=None)
+        td = unaware_submission - epoch 
+        epoch_submission = td.days * 86400 + td.seconds + (float(td.microseconds) / 1000000) #number of seconds from epoch till date of submission
+        secs = epoch_submission - 1432201843 #a recent date, coverted to epoch time
+        f.rank_score = round(0 * 0 + secs / 45000, 8)
         if self.request.user.is_authenticated():
-            print "IS AUTHENTICATED"
             f.submitter = self.request.user
             f.submitter.userprofile.score = f.submitter.userprofile.score + 5 #adding 5 points every time a user submits new content
         else:
-            print "IS NOT AUTHENTICATED"
             f.submitter = User(id=9) # set this ID to unregistered_bhoot
             f.submitter.userprofile.score = f.submitter.userprofile.score + 0
         f.with_votes = 0
         f.category = '1'
+        # add vote object with value=0
+        #Vote.objects.create(voter=f.submitter, link=f, value=0)
         f.save()
         f.submitter.userprofile.save()
         return super(CreateView, self).form_valid(form)
@@ -126,13 +160,14 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
             # delete vote
             prev_votes[0].delete() #if user has previously voted, simply delete previous vote
         #if page==1:
-        print self.request.META.get('HTTP_REFERER')
         return redirect(self.request.META.get('HTTP_REFERER')+"#section"+section)
         #else:
         #    return redirect(self.request.META.get('HTTP_REFERER')+"?page="+page)
 
     def form_invalid(self, form): #this function is also always to be defined for views created for forms
         return redirect("home")
+
+
 
 def LinkAutoCreate(user, content):   
     link = Link()
