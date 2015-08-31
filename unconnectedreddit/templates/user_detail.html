@@ -32,7 +32,7 @@
 	{% endif %}
 	<div>
 	<b class="profile">{% trans "Ling:" %}</b>
-	{% if object.userprofile.gender %}
+	{% if object.userprofile.gender == '1' %}
 		<a class="info">{% trans "Mahila" %}</a>
 	{% else %}
 		<a class="info">{% trans "Purush" %}</a>	
@@ -40,7 +40,7 @@
 	{% endif %}
 	<div>
 	<b class="profile">{% trans "Shaadi shuda:" %}</b>
-	{% if object.userprofile.shadi_shuda %}
+	{% if object.userprofile.shadi_shuda == '1' %}
 		<a class="info">{% trans "Yes" %}</a>
 	{% else %}
 		<a class="info">{% trans "No" %}</a>
@@ -48,18 +48,28 @@
 	{% endif %}
 	<div>
 	<b class="profile">{% trans "Shakal soorat:" %}</b>
-	{% if object.userprofile.attractiveness %}
-		{% if object.userprofile.attractiveness == '1' %}
-		<a class="info">{% trans "Itni burri bhi nahi" %}</a>
-		{% else %}
-		<a class="info">{% trans "Shakal pe mat ja" %}</a>
-		{% endif %}
+	{% if object.userprofile.attractiveness == '0' %}
+		<a class="info">{% trans "Ekdum kadak yaar" %}</a>
 	{% else %}
-	<a class="info">{% trans "Ekdum kadak yaar" %}</a>
+		{% if object.userprofile.attractiveness == '1' %}
+			<a class="info">{% trans "Itni burri bhi nahi" %}</a>
+		{% else %}
+			<a class="info">{% trans "Shakal pe mat ja" %}</a>
+		{% endif %}
 	{% endif %}
 	</div>
 {% if object.username == user.username %}
-<p><a href='{% url "edit_profile" %}' class="button" style="color:white;background-color:#1947D1; border:solid;border-width:1px;border-radius:4px; padding-left:2px;padding-right:2px;padding-bottom:2px;border-color:#1947D1;">{% trans "Change my profile" %}</a></p>
+<p><a href='{% url "edit_profile" %}' class="button" style="color:white;background-color:#1947D1; border:solid;border-width:1px;border-radius:4px; padding-left:2px;padding-right:2px;padding-bottom:2px;border-color:#1947D1;">{% trans "Profile badlo" %}</a></p>
+<h2>{{ object.username }} {% trans "ke adhikar" %}</h2>
+	<div>
+	<b class="profile">{% trans "Sab ka score dikhao:" %}</b>
+	{% if not object.usersettings.score_setting == '1' %}
+		<a class="info">{% trans "No" %}</a>
+	{% else %}
+		<a class="info">{% trans "Yes" %}</a>
+	</div>
+	{% endif %}
+<p><a href='{% url "edit_settings" %}' class="button" style="color:white;background-color:#1947D1; border:solid;border-width:1px;border-radius:4px; padding-left:2px;padding-right:2px;padding-bottom:2px;border-color:#1947D1;">{% trans "Adhikar badlo" %}</a></p>
 {% endif %}
 </div>
 {% endblock %}
