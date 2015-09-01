@@ -20,11 +20,12 @@
   <b>unregistered_bhoot</b>: <a class="info">{{ object.description|urlize_target_blank:25 }}</a>
 {% else %}
   <a href="{% url 'profile' slug=object.submitter %}"><b>{{ object.submitter }}</b></a>: <a class="info">{{ object.description|urlize_target_blank:25 }}</a>
-{% endif %}</p>
+{% endif %}
+<span style="font-family:'Noto Sans', arial; color: gray; line-height:1.2;text-shadow:0 0 0.1px gray;font-size:70%;">{{ link.submitted_on|naturaltime }}</span>
+</p>
 {% if object.url %}
   Link: <a href="{{ object.url }}" target="_blank" class:"wrapping">{{ object.url|urlize_target_blank:25 }}</a>
 {% endif %}
-
 <div class="comments">
 <p style="color:gray"><hr size=1></p>
   <h3>{% trans "Comments:" %}</h3>

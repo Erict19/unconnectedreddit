@@ -57,7 +57,7 @@
 	{% if link.url %}
 		<b><span style="font-size:121%; font-weight:100; font-family:'Noto Sans', arial; line-height:1.3;text-shadow:0 0 0.1px #8080FF;"><a href="{{ link.url }}" target="_blank">{{ link.url|urlize_target_blank:25 }}</a></span></b>
 	{% endif %} 
-	{{ link.submitted_on|naturaltime }}
+	<span style="font-size:90%;">{{ link.submitted_on|naturaltime }}</span>
 	<p style="margin-top:0.8em">
 	<a class="countofvotes">
 		{% if link.votes %}
