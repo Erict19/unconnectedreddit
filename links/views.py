@@ -115,6 +115,9 @@ class LinkCreateView(CreateView):
             f.submitter.userprofile.score = f.submitter.userprofile.score + 0
         f.with_votes = 0
         f.category = '1'
+        if f.description==f.submitter.userprofile.previous_retort:
+            return redirect(self.request.META.get('HTTP_REFERER')+"#section0")
+        f.submitter.userprofile.previous_retort = f.description
         # add vote object with value=0
         #Vote.objects.create(voter=f.submitter, link=f, value=0)
         f.save()
