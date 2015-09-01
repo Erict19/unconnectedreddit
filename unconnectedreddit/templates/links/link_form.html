@@ -6,9 +6,13 @@
 <p>{% trans "Jokes, stories, dil ki baat, mazay mazay ke links, sab chalta hai!" %}</p>  
 <form method="post" action="">
   {% csrf_token %}
-  <td>{{ form.as_p }}</td>
-  <input class="button" style="background-color:#F6F6F6" type="submit" value="{% trans 'Add' %}">
+  {{ form.description.errors }}
+  <span style="font-size:92%;">{{ form.description.label_tag }}</span>{{ form.description }}<br>
+  {{ form.url.errors }}<br>
+  <span style="font-size:92%;">{{ form.url.label_tag }}</span>{{ form.url }}<br><br>
+  <!--<td>{{ form.as_p }}</td>-->
+  <input class="button" style="color:white;background-color:#1947D1" type="submit" value="{% trans 'Add' %}">
 </form>
-<p style="color:gray">{% trans "Aap jo likhogey, usko 'Home' pe aaney mai shayid 2-3 min lag jain. Chinta mat karna" %}</p>
+<br><span style="color:gray;font-size:85%">{% trans "Aap jo likhogey, usko 'Home' pe aaney mai shayid 2-3 min lag jain. Chinta mat karna" %}</span>
 </div>
 {% endblock %}
