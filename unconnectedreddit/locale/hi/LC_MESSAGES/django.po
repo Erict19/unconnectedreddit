@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-31 08:17-0400\n"
+"POT-Creation-Date: 2015-09-02 12:00-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid " register"
 msgstr " रिजिस्टर"
 
 #: templates/login.html:6 templates/login.html.py:8
-#: templates/links/link_detail.html:51 templates/registration/login.html:8
+#: templates/links/link_detail.html:52 templates/registration/login.html:8
 #: templates/registration/registration_form.html:6
 #: templates/registration/registration_vote_form.html:6
 msgid "karo."
@@ -197,7 +197,7 @@ msgstr "प्रोफाइल बदलो"
 
 #: templates/user_detail.html:65
 msgid "Sab ka score dikhao:"
-msgstr "सब का स्कोर दिखाओ"
+msgstr "सब का स्कोर दिखाओ:"
 
 #: templates/user_detail.html:72
 msgid "Adhikar badlo"
@@ -235,19 +235,19 @@ msgstr "इसको बदलो "
 msgid "Delete"
 msgstr "इसको मिटाओ"
 
-#: templates/links/link_detail.html:30
+#: templates/links/link_detail.html:31
 msgid "Comments:"
 msgstr "कॉमेंट :"
 
-#: templates/links/link_detail.html:48
+#: templates/links/link_detail.html:49
 msgid "Add comment"
 msgstr "लिख लिया"
 
-#: templates/links/link_detail.html:51
+#: templates/links/link_detail.html:52
 msgid "Comment karney ke liye"
 msgstr "कॉमेंट करने के लिए"
 
-#: templates/links/link_detail.html:51
+#: templates/links/link_detail.html:52
 msgid "register"
 msgstr "रिजिस्टर"
 
@@ -259,53 +259,37 @@ msgstr "कुछ लिखो"
 msgid "Jokes, stories, dil ki baat, mazay mazay ke links, sab chalta hai!"
 msgstr "चुटकुले, कहानियों, मंन की बात, मज़े मज़े के लिंक्स, सब चलता हैं!"
 
-#: templates/links/link_form.html:10
+#: templates/links/link_form.html:14
 msgid "Add"
 msgstr "लिख लिया"
 
-#: templates/links/link_form.html:12
+#: templates/links/link_form.html:16
 msgid ""
 "Aap jo likhogey, usko 'Home' pe aaney mai shayid 2-3 min lag jain. Chinta "
 "mat karna"
 msgstr "आप जो लिखोगे उसको होम पे आने मैं शायड 2-3 मिनिट लग जाए| चिंता मत करना"
 
-#: templates/links/link_list.html:63
-msgid "1 vote"
-msgstr "1 वोट"
+#: templates/links/link_list.html:84
+msgid "wapis lo"
+msgstr "वापिस  लो"
 
-#: templates/links/link_list.html:65
-msgid " votes"
-msgstr " वोट"
-
-#: templates/links/link_list.html:68
-msgid "0 votes"
-msgstr "0 वोट"
-
-#: templates/links/link_list.html:72
-msgid "vote"
-msgstr "वोट करो"
-
-#: templates/links/link_list.html:77
-msgid "unvote"
-msgstr "वोट वापिस लो"
-
-#: templates/links/link_list.html:83
+#: templates/links/link_list.html:90
 msgid "comment"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:83
+#: templates/links/link_list.html:90
 msgid "comments"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:86
+#: templates/links/link_list.html:93
 msgid "comment karo"
 msgstr "कॉमेंट करो"
 
-#: templates/links/link_list.html:101
+#: templates/links/link_list.html:108
 msgid "pichla panna"
 msgstr "पिछला पन्ना"
 
-#: templates/links/link_list.html:105
+#: templates/links/link_list.html:112
 msgid "agla panna"
 msgstr "अगला पन्ना"
 
@@ -339,3 +323,18 @@ msgstr ""
 #: templates/registration/registration_vote_form.html:6
 msgid "login"
 msgstr "लॉग इन"
+
+#~ msgid "1 vote"
+#~ msgstr "1 वोट"
+
+#~ msgid " votes"
+#~ msgstr " वोट"
+
+#~ msgid "0 votes"
+#~ msgstr "0 वोट"
+
+#~ msgid "vote"
+#~ msgstr "वोट करो"
+
+#~ msgid "unvote"
+#~ msgstr "वोट वापिस लो"
