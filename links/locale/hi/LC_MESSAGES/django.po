@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 11:59-0400\n"
+"POT-Creation-Date: 2015-09-21 15:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,102 +46,106 @@ msgstr "इतनी बुरी भी नही"
 msgid "Shakal pe mat ja"
 msgstr "शकल पे मत जा"
 
-#: models.py:12
+#: models.py:36
 msgid "Gupshup"
 msgstr "मंन की बात"
 
-#: models.py:13
+#: models.py:37
 msgid "Songs"
 msgstr "गाने"
 
-#: models.py:14
+#: models.py:38
 msgid "Funny"
 msgstr "चुटकुले"
 
-#: models.py:15
+#: models.py:39
 msgid "Videos"
 msgstr "फिल्में"
 
-#: models.py:16
+#: models.py:40
 msgid "Cricket"
 msgstr "क्रिकेट"
 
-#: models.py:17
+#: models.py:41
 msgid "Photos"
 msgstr "तस्वीरें"
 
-#: models.py:18
+#: models.py:42
 msgid "Ajeeb"
 msgstr "अनोखा"
 
-#: models.py:19
+#: models.py:43
 msgid "Dosti"
 msgstr "दोस्ती"
 
-#: models.py:20
+#: models.py:44
 msgid "Khareedna Baichna"
 msgstr "खरीदने और बेचने"
 
-#: models.py:34
+#: models.py:58
 msgid "Kuch likho:"
 msgstr "कुछ लिखो:"
 
-#: models.py:38
+#: models.py:62
 msgid "Link (agar hai):"
 msgstr "लिंक (अगर हैं):"
 
-#: models.py:39
+#: models.py:63
 msgid "Category"
 msgstr ""
 
-#: models.py:78
+#: models.py:103
 msgid "Apney baarey mein kuch khaas baat batao"
 msgstr "अपने बारे मैं कुछ ख़ास बात बताओ"
 
-#: models.py:78
+#: models.py:103
 msgid "Main apni favorite hoon..."
 msgstr "मैं अपनी  फेवरीत हूँ ..."
 
-#: models.py:79
+#: models.py:104
 msgid "Mahila ya purush?"
 msgstr "महिला या पुरुष?"
 
-#: models.py:80
+#: models.py:105
 msgid "Kitni umar hai?"
 msgstr "कितनी उमर हैं?"
 
-#: models.py:81
+#: models.py:106
 msgid "Shaadi kar li hai?"
 msgstr "क्या आप शादीशुदा हैं?"
 
-#: models.py:83
+#: models.py:108
 msgid "Shakal soorat"
 msgstr "शकल सूरत"
 
-#: models.py:84
+#: models.py:109
 msgid "Mobile number"
 msgstr "मोबाइल नंबर "
 
-#: models.py:85
+#: models.py:110
 msgid "Score"
 msgstr "स्कोर"
 
-#: models.py:96
+#: models.py:111
+msgid "Apni photo dalo"
+msgstr "Apanī tasvīra apalōḍa karō"
+
+#: models.py:122
 msgid "Sab ka score dikhao"
 msgstr "सब का स्कोर दिखाओ"
 
-#: models.py:97
+#: models.py:123
 msgid "Setting2"
 msgstr ""
 
-#: models.py:98
+#: models.py:124
 msgid "Setting3"
 msgstr ""
 
-#: models.py:99
+#: models.py:125
 msgid "Setting4"
 msgstr ""
 
-#: models.py:100
+#: models.py:126
 msgid "Setting5"
 msgstr ""

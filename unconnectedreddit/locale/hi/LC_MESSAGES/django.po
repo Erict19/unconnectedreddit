@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 12:00-0400\n"
+"POT-Creation-Date: 2015-09-21 15:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,29 +26,33 @@ msgstr "हिन्दी"
 msgid "English"
 msgstr "अंग्रेज़ी"
 
-#: templates/base.html:6 templates/base.html.py:60 templates/base.html:63
+#: templates/base.html:6 templates/base.html.py:61 templates/base.html:65
 msgid "Damadam"
 msgstr "दमादम"
 
-#: templates/base.html:67
+#: templates/base.html:68
+msgid "Aap ke aas paas logg internet par yeh dekh rehay hain:"
+msgstr "आप के आस पास लोग इंटरनेट पे ये देख रहे हैं:"
+
+#: templates/base.html:69
 msgid "Bindas gupshup aur Internet links!"
 msgstr "बिंदास गपशप और इंटरनेट लिंक्स"
 
-#: templates/base.html:71
+#: templates/base.html:73
 msgid "Home"
 msgstr "होम"
 
-#: templates/base.html:73 templates/base.html.py:86 templates/base.html:107
-#: templates/base.html.py:109
+#: templates/base.html:75 templates/base.html.py:88 templates/base.html:109
+#: templates/base.html.py:111
 msgid "KUCH LIKHO"
 msgstr "कुछ लिखो"
 
-#: templates/base.html:87 templates/registration/registration_form.html:12
+#: templates/base.html:89 templates/registration/registration_form.html:12
 #: templates/registration/registration_vote_form.html:12
 msgid "Register"
 msgstr "रिजिस्टर"
 
-#: templates/base.html:88 templates/login.html:5 templates/login.html.py:22
+#: templates/base.html:90 templates/login.html:5 templates/login.html.py:22
 #: templates/registration/login.html:19
 msgid "Login"
 msgstr "लॉग इन"
@@ -269,27 +273,31 @@ msgid ""
 "mat karna"
 msgstr "आप जो लिखोगे उसको होम पे आने मैं शायड 2-3 मिनिट लग जाए| चिंता मत करना"
 
-#: templates/links/link_list.html:84
+#: templates/links/link_list.html:51 templates/links/link_list.html.py:68
+msgid "ne likha,"
+msgstr "ने लिखा,"
+
+#: templates/links/link_list.html:97
 msgid "wapis lo"
 msgstr "वापिस  लो"
 
-#: templates/links/link_list.html:90
+#: templates/links/link_list.html:104
 msgid "comment"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:90
+#: templates/links/link_list.html:104
 msgid "comments"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:93
+#: templates/links/link_list.html:107
 msgid "comment karo"
 msgstr "कॉमेंट करो"
 
-#: templates/links/link_list.html:108
+#: templates/links/link_list.html:122
 msgid "pichla panna"
 msgstr "पिछला पन्ना"
 
-#: templates/links/link_list.html:112
+#: templates/links/link_list.html:126
 msgid "agla panna"
 msgstr "अगला पन्ना"
 
