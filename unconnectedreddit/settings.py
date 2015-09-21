@@ -4,7 +4,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MAIN_DIR = os.path.dirname(os.path.dirname(__file__))
-
+#the location of the translation strings:
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
@@ -266,4 +266,12 @@ CELERYBEAT_SCHEDULE = {
 }
 
 CELERY_TIMEZONE = 'UTC'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_FORCE_HTTP_URL = True
+AWS_QUERYSTRING_AUTH = False
+AWS_SECRET_ACCESS_KEY = os.environ.get('awssecretkey')
+AWS_ACCESS_KEY_ID = os.environ.get('awsaccesskeyid')
+AWS_S3_CALLING_FORMAT='boto.s3.connection.OrdinaryCallingFormat'
+AWS_STORAGE_BUCKET_NAME = 'damadam.in'
 
