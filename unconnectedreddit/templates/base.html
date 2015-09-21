@@ -57,14 +57,16 @@
 </nav>
 </div>
 {% if not request.mobile or request.tablet %}
-<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>
-{{ window.screen.width }}
+<h1 style="text-shadow:0 0 0.7px white;"></h1>
+<!--<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>-->
+<!--{{ window.screen.width }}-->
 {% else %}
-<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>
+<h1 style="text-shadow:0 0 0.7px white;"></h1>
+<!--<h1 style="text-shadow:0 0 0.7px white;">{% trans "Damadam" %}</h1>-->
 {% endif %}
 <!-- -->
-
-<h5 style="text-shadow:0 0 0.1px white;">{% trans "Bindas gupshup aur Internet links!" %}</h5>
+<h5 style="text-shadow:0 0 0.1px white;">{% trans "Aap ke aas paas logg internet par yeh dekh rehay hain:" %}</h5>
+<!--<h5 style="text-shadow:0 0 0.1px white;">{% trans "Bindas gupshup aur Internet links!" %}</h5>-->
 <div class="navbar"><a name="section0"></a>
 <p>
     <!--<a href="{% url 'home' %}">Home</a> |-->
