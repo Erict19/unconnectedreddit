@@ -108,7 +108,7 @@ class UserProfile(models.Model):
 	attractiveness = models.CharField(_("Shakal soorat"), max_length=50, default=1)
 	mobilenumber = models.CharField(_("Mobile number"), max_length=15)
 	score = models.IntegerField(_("Score"), default=0)
-	avatar = models.ImageField(upload_to=upload_avatar_to_location, null=True, blank=True )
+	avatar = models.ImageField(_("Apni photo dalo"), upload_to=upload_avatar_to_location, null=True, blank=True )
 
 	def __unicode__(self):
 		return "%s's profile" % self.user
