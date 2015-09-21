@@ -419,6 +419,10 @@ a{
     font-size:120%;
 }
 
+.vote_form {        
+    padding-left:0.3em;     
+    }
+
 .biggerblack {
     font-size:130%;
     color:black;
