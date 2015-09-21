@@ -1,5 +1,7 @@
 # Create your views here.
-import re
+import re, urlmarker, StringIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from scraper import read_image
 from .models import Link, Vote, UserProfile, UserSettings
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import get_user_model
@@ -8,7 +10,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView, FormVi
 from .forms import UserProfileForm, LinkForm, VoteForm, ScoreHelpForm, UserSettingsForm
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from math import log
 from datetime import datetime, timedelta
 from django.utils import timezone
@@ -118,8 +120,43 @@ class LinkCreateView(CreateView):
         if f.description==f.submitter.userprofile.previous_retort:
             return redirect(self.request.META.get('HTTP_REFERER')+"#section0")
         f.submitter.userprofile.previous_retort = f.description
-        # add vote object with value=0
-        #Vote.objects.create(voter=f.submitter, link=f, value=0)
+        urls1 = re.findall(urlmarker.URL_REGEX,f.description)
+        urls2 = re.findall(urlmarker.URL_REGEX,f.url)
+        try:
+            if len(urls1)==0:
+                if len(urls2)==1:
+                    name, image = read_image(urls2[0])
+                    if image:
+                        image_io = StringIO.StringIO()
+                        image.save(image_io, format='JPEG')
+                        thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                        f.image_file = thumbnail
+            elif len(urls1)==1:
+                name, image = read_image(urls1[0])
+                if image:
+                    image_io = StringIO.StringIO()
+                    image.save(image_io, format='JPEG')
+                    thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                    f.image_file = thumbnail
+            elif len(urls1)>=2:
+                name, image = read_image(urls1[0])
+                if image:
+                    image_io = StringIO.StringIO()
+                    image.save(image_io, format='JPEG')
+                    thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                    f.image_file = thumbnail
+                else:
+                    name, image = read_image(urls1[1])
+                    if image:
+                        image_io = StringIO.StringIO()
+                        image.save(image_io, format='JPEG')
+                        thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                        f.image_file = thumbnail
+            else:
+                pass
+        except Exception as e:
+            print '%s (%s)' % (e.message, type(e))  
+            pass            
         f.save()
         f.submitter.userprofile.save()
         return super(CreateView, self).form_valid(form)
@@ -134,12 +171,12 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
         if self.request.method == 'POST':
             btn = self.request.POST.get("val")
             section = self.request.POST.get("section_number")
-        if btn == u"\u25B2":
+        if btn == u"\u2714":
             val = 1
             if not link.submitter.username == 'unregistered_bhoot':
                 link.submitter.userprofile.score = link.submitter.userprofile.score + 10 #adding 10 points every time a user's content gets an upvote
                 link.submitter.userprofile.save() #this is a server call 
-        elif btn == u"\u25BC":
+        elif btn == u"\u2717":
             val = -1
             if not link.submitter.username == 'unregistered_bhoot':
                 link.submitter.userprofile.score = link.submitter.userprofile.score - 10 #subtracting 10 points every time a user's content gets a downvote
@@ -176,6 +213,7 @@ def LinkAutoCreate(user, content):
     link = Link()
     #content = content.replace('#',' ')
     link.description = content
+    urls1 = re.findall(urlmarker.URL_REGEX,link.description)
     #urls = re.findall(r'(https?://\S+)', content)
      #r = re.compile(r'(https?://[^ ]+)')
     #r = re.findall("#(\w+)",content)
@@ -195,6 +233,35 @@ def LinkAutoCreate(user, content):
     link.rank_score = round(0 * 0 + secs / 45000, 8)
     link.with_votes = 0
     link.category = '1'
+    try:
+        if len(urls1)==0:
+            pass
+        elif len(urls1)==1:
+            name, image = read_image(urls1[0])
+            if image:
+                image_io = StringIO.StringIO()
+                image.save(image_io, format='JPEG')
+                thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                link.image_file = thumbnail
+        elif len(urls1)>=2:
+            name, image = read_image(urls1[0])
+            if image:
+                image_io = StringIO.StringIO()
+                image.save(image_io, format='JPEG')
+                thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                link.image_file = thumbnail
+            else:
+                name, image = read_image(urls1[1])
+                if image:
+                    image_io = StringIO.StringIO()
+                    image.save(image_io, format='JPEG')
+                    thumbnail = InMemoryUploadedFile(image_io, None, name, 'image/jpeg', image_io.len, None)
+                    link.image_file = thumbnail
+        else:
+            pass
+    except Exception as e:
+        print '%s (%s)' % (e.message, type(e))  
+        pass    
     link.save()
     user.userprofile.previous_retort = content
     user.userprofile.save()
