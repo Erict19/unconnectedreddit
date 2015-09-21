@@ -166,6 +166,7 @@ INSTALLED_APPS = (
     'djcelery',
     'tweepy',
     'django.contrib.humanize',
+    'storages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -269,9 +270,23 @@ CELERY_TIMEZONE = 'UTC'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_FORCE_HTTP_URL = True
+AWS_S3_SECURE_URLS = False
+AWS_S3_URL_PROTOCOL = 'http'
 AWS_QUERYSTRING_AUTH = False
 AWS_SECRET_ACCESS_KEY = os.environ.get('awssecretkey')
 AWS_ACCESS_KEY_ID = os.environ.get('awsaccesskeyid')
 AWS_S3_CALLING_FORMAT='boto.s3.connection.OrdinaryCallingFormat'
 AWS_STORAGE_BUCKET_NAME = 'damadam.in'
+#HOST ='s3-ap-southeast-1.amazonaws.com'
+#AWS_ENDPOINT = 's3-ap-southeast-1.amazonaws.com'
+#AWS_S3_REGION = 's3-ap-southeast-1'
+#REGION = 's3-ap-southeast-1'
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#BOTO_S3_HOST = 'damadamindia.s3-ap-southeast-1.amazonaws.com'
+#S3_HOST = 'http://damadamindia.ap-southeast-1.amazonaws.com'
+#'damadam.in.s3-website-ap-southeast-1.amazonaws.com'
+#'s3-ap-southeast-1.amazonaws.com'
+#BOTO_BUCKET_LOCATION = 'Singapore'
 
+#S3Connection.DefaultHost = 's3-ap-northeast-1.amazonaws.com'
+#HOST = 'http://damadam.in.ap-southeast-1.amazonaws.com'
