@@ -7,6 +7,30 @@ from datetime import datetime, timedelta
 from math import log
 from django.core.validators import MaxLengthValidator
 from django.utils.translation import ugettext_lazy as _
+import os
+import uuid
+
+def upload_to_location(instance, filename):
+    try:
+        blocks = filename.split('.') 
+        ext = blocks[-1]
+        filename = "%s.%s" % (uuid.uuid4(), ext)
+        instance.title = blocks[0]
+        return os.path.join('uploads/', filename)
+    except Exception as e:
+        print '%s (%s)' % (e.message, type(e))
+        return 0
+
+def upload_avatar_to_location(instance, filename):
+    try:
+        blocks = filename.split('.') 
+        ext = blocks[-1]
+        filename = "%s.%s" % (uuid.uuid4(), ext)
+        instance.title = blocks[0]
+        return os.path.join('uploads/', filename)
+    except Exception as e:
+        print '%s (%s)' % (e.message, type(e))
+        return 0
 
 CATEGS = (
 ('1',_('Gupshup')),
@@ -37,6 +61,7 @@ class Link(models.Model):
 	rank_score = models.FloatField(default=0.0)
 	url = models.URLField(_("Link (agar hai):"), max_length=250, blank=True)
 	category = models.CharField(_("Category"),choices=CATEGS, default=1, max_length=25)
+	image_file = models.ImageField(upload_to=upload_to_location, null=True, blank=True)
 	
 	with_votes = LinkVoteCountManager() 
 	objects = models.Manager() #default, in-built manager
@@ -83,6 +108,7 @@ class UserProfile(models.Model):
 	attractiveness = models.CharField(_("Shakal soorat"), max_length=50, default=1)
 	mobilenumber = models.CharField(_("Mobile number"), max_length=15)
 	score = models.IntegerField(_("Score"), default=0)
+	avatar = models.ImageField(upload_to=upload_avatar_to_location, null=True, blank=True )
 
 	def __unicode__(self):
 		return "%s's profile" % self.user
