@@ -41,7 +41,7 @@ def isyoutube(url):
 	if ('youtube' or 'youtu.be') in url:
 		vid_id = re.search(r"((?<=(v|V)/)|(?<=be/)|(?<=(\?|\&)v=)|(?<=embed/))([\w-]+)", url)
 		try:
-			return 'i1.ytimg.com/vi/%s/mqdefault.jpg' % vid_id.group()
+			return 'http://i1.ytimg.com/vi/%s/mqdefault.jpg' % vid_id.group()
 		except Exception as e:
 			print 'isyoutube():there was no video ID in the youtube URL'
 			return 0
