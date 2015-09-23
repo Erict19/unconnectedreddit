@@ -43,8 +43,8 @@ def isyoutube(url):
 		try:
 			return 'i1.ytimg.com/vi/%s/mqdefault.jpg' % vid_id.group()
 		except Exception as e:
-			print str(e)
-			return url
+			print 'isyoutube():there was no video ID in the youtube URL'
+			return 0
 	else:
 		#not a youtube URL
 		return 0
@@ -59,9 +59,10 @@ def parse_url(url):
 		url = "http://"+url
 	#url = urlnorm.norm(url)
 	finalurl = final_url(url)
-	temp = isyoutube(finalurl)
-	if temp:
+	youtube_video_link = isyoutube(finalurl)
+	if youtube_video_link:
 		finalurl = temp
+		return (finalurl, 0)
 	try:
 		#url = urllib2.urlopen(url).geturl()
 		req = urllib2.Request(url, None, headers=hdr)
@@ -203,10 +204,8 @@ def prep_image(image):
 
 def str_to_image(s):
 	s = StringIO.StringIO(s)
-	print s
 	s.seek(0)
 	image = Image.open(s)
-	print image
 	return image
 
 def imagifier(url):
