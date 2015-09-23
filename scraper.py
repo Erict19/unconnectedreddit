@@ -61,7 +61,7 @@ def parse_url(url):
 	finalurl = final_url(url)
 	youtube_video_link = isyoutube(finalurl)
 	if youtube_video_link:
-		finalurl = temp
+		finalurl = youtube_video_link
 		return (finalurl, 0)
 	try:
 		#url = urllib2.urlopen(url).geturl()
