@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from django.core.validators import URLValidator
 from urlparse import urlparse, urljoin
 from django.core.exceptions import ValidationError
-import urllib2, re, requests, sys, StringIO
+import urllib, urllib2, re, requests, sys, StringIO#, cStringIO
 from urllib2 import Request, urlopen
 from PIL import Image, ImageFile
 from io import BytesIO
@@ -37,6 +37,18 @@ def unshorten_url(url):
 	else:
 		return url
 '''
+def isyoutube(url):
+	if ('youtube' or 'youtu.be') in url:
+		vid_id = re.search(r"((?<=(v|V)/)|(?<=be/)|(?<=(\?|\&)v=)|(?<=embed/))([\w-]+)", url)
+		try:
+			return 'i1.ytimg.com/vi/%s/mqdefault.jpg' % vid_id.group()
+		except Exception as e:
+			print str(e)
+			return url
+	else:
+		#not a youtube URL
+		return 0
+
 def parse_url(url):
 	global bytes_read
 	#r = requests.get(url)
@@ -47,7 +59,9 @@ def parse_url(url):
 		url = "http://"+url
 	#url = urlnorm.norm(url)
 	finalurl = final_url(url)
-	#print url
+	temp = isyoutube(finalurl)
+	if temp:
+		finalurl = temp
 	try:
 		#url = urllib2.urlopen(url).geturl()
 		req = urllib2.Request(url, None, headers=hdr)
@@ -74,14 +88,15 @@ def parse_url(url):
 			soup = BeautifulSoup(webpage2, "lxml")
 			return (finalurl, soup)
 	except Exception as e:
-		print '%s (%s)' % (e.message, type(e))
+		print str(e)
 		return (0, 0)
 
 def clean_url(url):
-	"""url quotes unicode data out of urls"""
+	"""clean_url quotes unicode data out of urls"""
 	s = url
 	url = s.encode('utf8')
 	url = ''.join([urllib.quote(c) if ord(c) >= 127 else c for c in url])
+	#print url
 	return url
 
 def image_sizing(string, url):
@@ -91,31 +106,39 @@ def image_sizing(string, url):
 	global bytes_read
 	try:
 		urlv(clean_src)
-	except Exception as e:
-		print '%s (%s)' % (e.message, type(e))
+		print 'the validated url is %s' % clean_src
+	except:
+		print 'image_sizing(): found URL fragment, attempting urljoin() with parent URL'
 		clean_src = urljoin(url, clean_src)
+		clean_src = clean_url(clean_src)
+		print 'joined_url is %s' % clean_src
 	try:
+		print 'bytes read before requesting URL %s' % bytes_read
 		req  = requests.get(clean_src,headers={'User-Agent':'Mozilla5.0(Google spider)','Range':'bytes=0-{}'.format(RANGE)})#requests is an HTTP library
 		bytes_read = bytes_read + sys.getsizeof(req)
+		print 'bytes read after requesting URL %s' % bytes_read
+	except:
+		print 'image_sizing(): unable to send http request to url'
+	try:	
 		dimensions = Image.open(BytesIO(req.content))#bytesIO is a simple stream of in-memory bytes, open doesn't load image
-		#print dimensions.size
 		return (dimensions, clean_src)
+		#return (im.size, clean_src)
 	except Exception as e:
-		print '%s (%s)' % (e.message, type(e))
+		print 'image_sizing(): unable to obtain image dimensions'
 		return (None, None)	
 
 def return_largest_image(url):
 	normal_url, soup = parse_url(url)
-	#print normal_url
+	#is normal_url an image file?
 	max_area = 0
 	max_dimensions = None
 	max_clean_src = None
 	previous_max_src = None
 	if normal_url:
 		if soup:
-			for img in soup.findAll('img', src=True)[:40]:
+			for img in soup.findAll('img', limit=40, src=True):
 				my_dimensions, my_clean_src = image_sizing(img, normal_url)
-				#print my_clean_src
+				#what do we do when dimensions are zero but image exists? (e.g. http://bollywood007.com/veena-malik-pics.html/veena-malik-nude-randi-pics)
 				try:
 					if my_dimensions.height * my_dimensions.width < 5001:#ignore small images
 						continue
@@ -134,7 +157,7 @@ def return_largest_image(url):
 						max_clean_src = my_clean_src
 					'''
 				except Exception as e:
-					print '%s (%s)' % (e.message, type(e))
+					print 'return_largest_image(): found non-image object while looping through soup.findAll'
 					continue	
 		else:
 			max_clean_src = normal_url #if soup = 0, the url is an image url itself
@@ -174,38 +197,54 @@ def prep_image(image):
 		#print 'successfully thumbnailed'
 		return image
 	except Exception as e:
-		print '%s (%s)' % (e.message, type(e))
+		print 'prep_image(): unable to successfully thumbnail image'
 		return 0
 
 
 def str_to_image(s):
 	s = StringIO.StringIO(s)
+	print s
 	s.seek(0)
 	image = Image.open(s)
+	print image
 	return image
 
-def read_image(url):
-	src= return_largest_image(url)
-	#print src
-	#print second
+def imagifier(url):
 	global bytes_read
-	if src:
+	if url:
+		url = urllib.quote(url, safe="%/:=&?~#+!$,;'@()*[]")
+		print url
+		name = urlparse(url).path.split('/')[-1]
+		name = name.replace(' ', '')
+		print name
 		try:
-			name = urlparse(src).path.split('/')[-1]
-			open_req = urlopen(src)
+			open_req = urlopen(url)
 			bytes_read = bytes_read + sys.getsizeof(open_req)
 			content = open_req.read()
 			bytes_read = bytes_read + sys.getsizeof(content)
 			print bytes_read
+		except:
+			print 'imagifier(): recieved url, but unable to open and read it'
+			return (None, None)
+		try:	
 			image = str_to_image(content)
+		except:
+			print 'imagifier(): recieved, opened and read url, but unable to str_to_image() it'
+			return (None, None)
+		try:
 			image = prep_image(image)
 			return (name,image)
-		except:
-			print '%s (%s)' % (e.message, type(e))
+		except Exception as e:
+			print 'imagifier(): recieved, opened and read url, but unable to prep_image()'
 			return (None, None)
 	else:
-		#print 'No image to read'
+		print 'imagifier(): did not recieve image url'
 		return (None, None)
+
+
+def read_image(url):
+	src= return_largest_image(url)
+	return imagifier(src)
 
 if __name__=="__main__":
 		read_image()
