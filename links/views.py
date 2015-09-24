@@ -155,7 +155,7 @@ class LinkCreateView(CreateView):
             else:
                 pass
         except Exception as e:
-            print '%s (%s)' % (e.message, type(e))  
+            print str(e)  
             pass            
         f.save()
         f.submitter.userprofile.save()
@@ -171,12 +171,12 @@ class VoteFormView(FormView): #corresponding view for the form for Vote we creat
         if self.request.method == 'POST':
             btn = self.request.POST.get("val")
             section = self.request.POST.get("section_number")
-        if btn == u"\u2714":
+        if btn == u"\u263A":
             val = 1
             if not link.submitter.username == 'unregistered_bhoot':
                 link.submitter.userprofile.score = link.submitter.userprofile.score + 10 #adding 10 points every time a user's content gets an upvote
                 link.submitter.userprofile.save() #this is a server call 
-        elif btn == u"\u2717":
+        elif btn == u"\u2639":
             val = -1
             if not link.submitter.username == 'unregistered_bhoot':
                 link.submitter.userprofile.score = link.submitter.userprofile.score - 10 #subtracting 10 points every time a user's content gets a downvote
