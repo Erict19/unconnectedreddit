@@ -47,7 +47,7 @@
 	<a name="section{{ forloop.counter }}"></a> 
 	{% if link.submitter.username == 'unregistered_bhoot' %}
 		<p style="margin-top:.7em">
-    	<span class="bigger" style="color:#666666;">...unregistered_bhoot&nbsp;</span>{% trans "ne likha," %}
+    	<span class="bigger" style="color:#666666;">..unregistered_bhoot&nbsp;</span>{% trans "ne likha," %}
     {% else %}
     <p style="margin-top:.7em">
 		...<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1.3; display:inline;text-shadow:0 0 0.1px #8080FF;">{{ link.submitter }}</a>
