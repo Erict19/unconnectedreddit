@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-21 15:43+0300\n"
+"POT-Creation-Date: 2015-09-24 05:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid "Damadam"
 msgstr "दमादम"
 
 #: templates/base.html:68
-msgid "Aap ke aas paas logg internet par yeh dekh rehay hain:"
+msgid "Aap ke aas paas log internet par yeh dekh rehay hain:"
 msgstr "आप के आस पास लोग इंटरनेट पे ये देख रहे हैं:"
 
 #: templates/base.html:69
@@ -98,7 +98,7 @@ msgid " register"
 msgstr " रिजिस्टर"
 
 #: templates/login.html:6 templates/login.html.py:8
-#: templates/links/link_detail.html:52 templates/registration/login.html:8
+#: templates/links/link_detail.html:64 templates/registration/login.html:8
 #: templates/registration/registration_form.html:6
 #: templates/registration/registration_vote_form.html:6
 msgid "karo."
@@ -239,19 +239,19 @@ msgstr "इसको बदलो "
 msgid "Delete"
 msgstr "इसको मिटाओ"
 
-#: templates/links/link_detail.html:31
+#: templates/links/link_detail.html:43
 msgid "Comments:"
 msgstr "कॉमेंट :"
 
-#: templates/links/link_detail.html:49
+#: templates/links/link_detail.html:61
 msgid "Add comment"
 msgstr "लिख लिया"
 
-#: templates/links/link_detail.html:52
+#: templates/links/link_detail.html:64
 msgid "Comment karney ke liye"
 msgstr "कॉमेंट करने के लिए"
 
-#: templates/links/link_detail.html:52
+#: templates/links/link_detail.html:64
 msgid "register"
 msgstr "रिजिस्टर"
 
@@ -273,31 +273,39 @@ msgid ""
 "mat karna"
 msgstr "आप जो लिखोगे उसको होम पे आने मैं शायड 2-3 मिनिट लग जाए| चिंता मत करना"
 
-#: templates/links/link_list.html:51 templates/links/link_list.html.py:68
+#: templates/links/link_list.html:50 templates/links/link_list.html.py:67
 msgid "ne likha,"
 msgstr "ने लिखा,"
 
-#: templates/links/link_list.html:97
+#: templates/links/link_list.html:72 templates/links/link_list.html.py:74
+msgid "dost ko bhejo >>"
+msgstr "दोस्त को भेजो >>"
+
+#: templates/links/link_list.html:95 templates/links/link_list.html.py:99
+msgid "Kaisa laga?"
+msgstr "कैसा लगा?"
+
+#: templates/links/link_list.html:104
 msgid "wapis lo"
 msgstr "वापिस  लो"
 
-#: templates/links/link_list.html:104
+#: templates/links/link_list.html:114
 msgid "comment"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:104
+#: templates/links/link_list.html:114
 msgid "comments"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:107
+#: templates/links/link_list.html:117
 msgid "comment karo"
 msgstr "कॉमेंट करो"
 
-#: templates/links/link_list.html:122
+#: templates/links/link_list.html:133
 msgid "pichla panna"
 msgstr "पिछला पन्ना"
 
-#: templates/links/link_list.html:126
+#: templates/links/link_list.html:137
 msgid "agla panna"
 msgstr "अगला पन्ना"
 
