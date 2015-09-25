@@ -46,10 +46,10 @@
 	{% endif %}
 	<a name="section{{ forloop.counter }}"></a> 
 	{% if link.submitter.username == 'unregistered_bhoot' %}
-		<p style="margin-top:.7em">
+	<!--	<p style="margin-top:.7em">-->
     	<span class="bigger" style="color:#666666;">..unregistered_bhoot&nbsp;</span>{% trans "ne likha," %}
     {% else %}
-    <p style="margin-top:.7em">
+    <!--<p style="margin-top:.7em">-->
 		...<a href="{% url 'profile' slug=link.submitter %}" class="bigger" style="font-family:'Noto Sans',arial;line-height:1.3; display:inline;text-shadow:0 0 0.1px #8080FF;">{{ link.submitter }}</a>
 		{% if user.is_authenticated %}
 			{% if user.usersettings.score_setting == '1' %}
@@ -67,7 +67,7 @@
 	    {% trans "ne likha," %}
     {% endif %} 
 	<span style="font-size:90%;">{{ link.submitted_on|naturaltime }}</span>
-	<p style="margin-top:0.4em">
+	<p style="margin-top:0.6em">
 	{% if link.url %}
 		<a href="sms:+91234?body={{ link.url|add:" ||Aur dekho MUFT main www.damadam.in par"|urlencode }}" class="sms" style="font-family:arial;font-size:95%;font-weight:bold;">{% trans "dost ko bhejo >>" %}</a></p>
 	{% else %}
@@ -93,8 +93,13 @@
 	{% endif %}
 	{% if not user.is_authenticated %}
 		<span style="font-size:90%;">{% trans "Kaisa laga?" %}</span>
+		<!--
 		<a href="{% url 'registration_register' %}" class="voting" style="font-family:'Noto Sans';color:white;background-color:#2FC12F;border:none;text-shadow:0 0 0px white;font-size:105%;">☺</a>
 		<a href="{% url 'registration_register' %}" class="voting" style="color:white;background-color:#FF0000;border:none;text-shadow:0 0 0px white;font-size:105%;font-family:'Noto Sans';">☹</a>
+		-->
+		<button onclick="location.href='{% url 'registration_register' %}'" class="voting" id="id_valup" type="button" style="color:white;background-color:#2FC12F;border:none;text-shadow:0 0 0px white;font-size:100%;margin: auto;">☺</button>
+		<button onclick="location.href='{% url 'registration_register' %}'" class="voting" id="id_valdown" type="button" style="color:white;background-color:#FF0000;border:none;text-shadow:0 0 0px white;font-size:100%;margin: auto;">☹</button>
+
 	{% elif link.pk not in voted %}	
 		<span style="font-size:90%;">{% trans "Kaisa laga?" %}</span>
 		<input class="voting" type="submit" id="id_valup" name="val" style="color:white;background-color:#2FC12F;border:none;text-shadow:0 0 0px white;font-size:100%;" value="☺">
@@ -117,7 +122,7 @@
 		<a href="{% url 'link_detail' pk=link.pk %}" style="color:#0033CC;text-shadow:0 0 0.1px #8099E6;cursor: pointer;">{% trans "comment karo" %}</a>
 	{% endif %}
 	</span>
-	</p></p>
+	<!--</p></p>-->
 </form>
 </li>
 {% endfor %}
