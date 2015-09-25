@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-24 05:53+0300\n"
+"POT-Creation-Date: 2015-09-25 15:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hassan Baig <baig.hassan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,9 +139,17 @@ msgstr "हो जाएगा"
 msgid "Aap ne jo likha hai, agar usay"
 msgstr "आप ने जो लिखा हैं, उससे"
 
+#: templates/score_help.html:8
+msgid "yes"
+msgstr "हाँ"
+
 #: templates/score_help.html:8 templates/score_help.html.py:9
 msgid "vote milay toh score"
 msgstr "वोट मिले तो स्कोर"
+
+#: templates/score_help.html:9
+msgid "no"
+msgstr "नही"
 
 #: templates/user_detail.html:8
 msgid "Score:"
@@ -281,31 +289,31 @@ msgstr "ने लिखा,"
 msgid "dost ko bhejo >>"
 msgstr "दोस्त को भेजो >>"
 
-#: templates/links/link_list.html:95 templates/links/link_list.html.py:99
-msgid "Kaisa laga?"
-msgstr "कैसा लगा?"
+#: templates/links/link_list.html:95 templates/links/link_list.html.py:104
+msgid "Pasand aya?"
+msgstr "पसंद आया?"
 
-#: templates/links/link_list.html:104
+#: templates/links/link_list.html:109
 msgid "wapis lo"
 msgstr "वापिस  लो"
 
-#: templates/links/link_list.html:114
+#: templates/links/link_list.html:119
 msgid "comment"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:114
+#: templates/links/link_list.html:119
 msgid "comments"
 msgstr "कॉमेंट"
 
-#: templates/links/link_list.html:117
+#: templates/links/link_list.html:122
 msgid "comment karo"
 msgstr "कॉमेंट करो"
 
-#: templates/links/link_list.html:133
+#: templates/links/link_list.html:138
 msgid "pichla panna"
 msgstr "पिछला पन्ना"
 
-#: templates/links/link_list.html:137
+#: templates/links/link_list.html:142
 msgid "agla panna"
 msgstr "अगला पन्ना"
 
@@ -339,6 +347,9 @@ msgstr ""
 #: templates/registration/registration_vote_form.html:6
 msgid "login"
 msgstr "लॉग इन"
+
+#~ msgid "Kaisa laga?"
+#~ msgstr "कैसा लगा?"
 
 #~ msgid "1 vote"
 #~ msgstr "1 वोट"
