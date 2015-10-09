@@ -49,6 +49,31 @@ def isyoutube(url):
 		#not a youtube URL
 		return 0
 
+def isdailymotion(url):
+	if 'dailymotion' in url:
+		vid_id = re.search(r"((?<=video/)|(?<=video=))([^_]+)", url)
+		try:
+			return 'http://www.dailymotion.com/thumbnail/video/%s' % vid_id.group()
+		except Exception as e:
+			print 'isdailymotion():there was no video ID in the dailymotion URL'
+			return 0
+	else:
+		#not a youtube URL
+		return 0
+
+def isfinalurl(url):
+	mediaurl = url
+	youtube_video_link = isyoutube(url)
+	if youtube_video_link:
+		mediaurl = youtube_video_link
+		return mediaurl
+	dailymotion_video_link = isdailymotion(url)
+	if dailymotion_video_link:
+		mediaurl = dailymotion_video_link
+		return mediaurl
+	return 0
+
+
 def parse_url(url):
 	global bytes_read
 	#r = requests.get(url)
@@ -59,9 +84,10 @@ def parse_url(url):
 		url = "http://"+url
 	#url = urlnorm.norm(url)
 	finalurl = final_url(url)
-	youtube_video_link = isyoutube(finalurl)
-	if youtube_video_link:
-		finalurl = youtube_video_link
+	print 'our final url is: %s' % finalurl
+	mediaurl =  isfinalurl(finalurl)
+	if mediaurl:
+		finalurl = mediaurl
 		return (finalurl, 0)
 	try:
 		#url = urllib2.urlopen(url).geturl()
