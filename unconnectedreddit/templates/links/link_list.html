@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load comments %}
 {% load humanize %}
-<!--{% load bootstrap_pagination %}-->
+
 {% load urlize_target_blank %}
 {% block content %}
 
@@ -12,7 +12,8 @@
 <ul class="zebra">
 {% endif %}
 {% for link in object_list %}
-<li class="zebra"> 
+<!--<li class="zebra">-->
+<li>
 <form method="POST" action="{% url 'vote' %}" class="vote_form">
 	{% csrf_token %}
 	<input type="hidden" id="id_link" name="link" class="hidden_id" value="{{ link.pk }}">
@@ -125,6 +126,7 @@
 	<!--</p></p>-->
 </form>
 </li>
+<p style="color:gray"><hr size=1></p>
 {% endfor %}
 </ul>
 {% endblock %}
@@ -143,5 +145,4 @@
     {% endif %}
 </div>
 {% endif %}
-<!--{% bootstrap_paginate page_obj range=5 show_prev_next="true" previous_label="Pichla" next_label="Agla" show_first_last="false" %}-->
 {% endblock %}
